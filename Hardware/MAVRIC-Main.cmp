@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 9/7/2013 6:04:09 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 9/7/2013 6:15:45 PM
 
 BeginCmp
 TimeStamp = /522B92BB;
@@ -60,14 +60,14 @@ BeginCmp
 TimeStamp = /522BA314;
 Reference = J9;
 ValeurCmp = ARM;
-IdModule  = CONN-WM6469CT;
+IdModule  = CONN-WM3553CT;
 EndCmp
 
 BeginCmp
 TimeStamp = /522BA323;
 Reference = J10;
 ValeurCmp = CAM;
-IdModule  = CONN-WM6469CT;
+IdModule  = CONN-WM3553CT;
 EndCmp
 
 BeginCmp
