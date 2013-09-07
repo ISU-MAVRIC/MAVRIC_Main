@@ -1,0 +1,129 @@
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 9/7/2013 6:04:09 PM
+
+BeginCmp
+TimeStamp = /522B92BB;
+Reference = J1;
+ValeurCmp = MTR1;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522B92E8;
+Reference = J2;
+ValeurCmp = MTR4;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522B92CA;
+Reference = J3;
+ValeurCmp = MTR2;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522B92F7;
+Reference = J4;
+ValeurCmp = MTR5;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522B92D9;
+Reference = J5;
+ValeurCmp = MTR3;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522B9306;
+Reference = J6;
+ValeurCmp = MTR6;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BA1BB;
+Reference = J7;
+ValeurCmp = VID;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BA1CA;
+Reference = J8;
+ValeurCmp = DAT;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BA314;
+Reference = J9;
+ValeurCmp = ARM;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BA323;
+Reference = J10;
+ValeurCmp = CAM;
+IdModule  = CONN-WM6469CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BA607;
+Reference = J11;
+ValeurCmp = CK-PWR;
+IdModule  = HDRV8W38P254_6X1-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BA62A;
+Reference = J12;
+ValeurCmp = CK-A0;
+IdModule  = HDRV8W38P254_8X1-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BA63E;
+Reference = J13;
+ValeurCmp = CK-A1;
+IdModule  = HDRV8W38P254_8X1-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BAA66;
+Reference = J14;
+ValeurCmp = CK-COM;
+IdModule  = HDRV8W38P254_8X1-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BAA2A;
+Reference = J15;
+ValeurCmp = CK-D0;
+IdModule  = HDRV16W64P254_8X2-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BAA48;
+Reference = J16;
+ValeurCmp = CK-X0;
+IdModule  = HDRV16W64P254_8X2-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BAA39;
+Reference = J17;
+ValeurCmp = CK-D1;
+IdModule  = HDRV16W64P254_8X2-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522BAA57;
+Reference = J18;
+ValeurCmp = CK-X1;
+IdModule  = HDRV16W64P254_8X2-SMT;
+EndCmp
+
+EndListe
