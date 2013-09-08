@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 9/7/2013 6:15:45 PM
+Cmp-Mod V01 Created by PcbNew date = 9/7/2013 11:30:38 PM
 
 BeginCmp
 TimeStamp = /522B92BB;
@@ -74,7 +74,7 @@ BeginCmp
 TimeStamp = /522BA607;
 Reference = J11;
 ValeurCmp = CK-PWR;
-IdModule  = HDRV8W38P254_6X1-SMT;
+IdModule  = HDRV6W38P254_6X1-SMT;
 EndCmp
 
 BeginCmp
