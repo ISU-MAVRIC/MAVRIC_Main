@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by PcbNew date = 9/7/2013 11:30:38 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 9/8/2013 1:13:26 AM
 
 BeginCmp
 TimeStamp = /522B92BB;
@@ -124,6 +124,20 @@ TimeStamp = /522BAA57;
 Reference = J18;
 ValeurCmp = CK-X1;
 IdModule  = HDRV16W64P254_8X2-SMT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522C1071;
+Reference = J19;
+ValeurCmp = GPS;
+IdModule  = CONN-WM3553CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522C02E0;
+Reference = U1;
+ValeurCmp = SN74LVC1G125;
+IdModule  = SOT65P210X110-5N;
 EndCmp
 
 EndListe
