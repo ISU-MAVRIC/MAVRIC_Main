@@ -1,4 +1,11 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 9/8/2013 1:13:26 AM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 9/9/2013 5:09:54 PM
+
+BeginCmp
+TimeStamp = /522E501C;
+Reference = C1;
+ValeurCmp = 0.1uF;
+IdModule  = CAPC2012;
+EndCmp
 
 BeginCmp
 TimeStamp = /522B92BB;
@@ -131,6 +138,13 @@ TimeStamp = /522C1071;
 Reference = J19;
 ValeurCmp = GPS;
 IdModule  = CONN-WM3553CT;
+EndCmp
+
+BeginCmp
+TimeStamp = /522E4D58;
+Reference = J20;
+ValeurCmp = CONN-DC;
+IdModule  = ;
 EndCmp
 
 BeginCmp
