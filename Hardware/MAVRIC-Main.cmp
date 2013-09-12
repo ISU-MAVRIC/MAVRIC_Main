@@ -1,10 +1,24 @@
-Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 9/9/2013 5:09:54 PM
+Cmp-Mod V01 Created by CvPcb (2013-07-07 BZR 4022)-stable date = 9/11/2013 6:00:39 PM
 
 BeginCmp
 TimeStamp = /522E501C;
 Reference = C1;
 ValeurCmp = 0.1uF;
 IdModule  = CAPC2012;
+EndCmp
+
+BeginCmp
+TimeStamp = /5230F0B7;
+Reference = C2;
+ValeurCmp = 0.1uF;
+IdModule  = CAPC2012;
+EndCmp
+
+BeginCmp
+TimeStamp = /5230F72D;
+Reference = D1;
+ValeurCmp = LED;
+IdModule  = LEDC2012;
 EndCmp
 
 BeginCmp
@@ -144,7 +158,28 @@ BeginCmp
 TimeStamp = /522E4D58;
 Reference = J20;
 ValeurCmp = CONN-DC;
-IdModule  = ;
+IdModule  = CONN-JST-XH-2;
+EndCmp
+
+BeginCmp
+TimeStamp = /5230F099;
+Reference = R1;
+ValeurCmp = 36k;
+IdModule  = RESC2012;
+EndCmp
+
+BeginCmp
+TimeStamp = /5230F0A8;
+Reference = R2;
+ValeurCmp = 10k;
+IdModule  = RESC2012;
+EndCmp
+
+BeginCmp
+TimeStamp = /5230F73C;
+Reference = R3;
+ValeurCmp = R;
+IdModule  = RESC2012;
 EndCmp
 
 BeginCmp
