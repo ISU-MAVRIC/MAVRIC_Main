@@ -8,7 +8,7 @@ $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
 Title ""
-Date "12 sep 2013"
+Date "24 sep 2013"
 Rev ""
 Comp ""
 Comment1 ""
@@ -453,6 +453,7 @@ F 0 "U1" H 9350 6150 50  0000 L CNN
 F 1 "SN74LVC1G125" H 9350 6050 50  0000 L CNN
 F 2 "~" H 9700 6100 60  0000 C CNN
 F 3 "~" H 9700 6100 60  0000 C CNN
+F 4 "296-11604-1-ND" H 9700 6100 60  0001 C CNN "Distributor Part No"
 	1    9700 6100
 	1    0    0    -1  
 $EndComp
