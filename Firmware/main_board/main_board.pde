@@ -13,7 +13,8 @@ uint8_t byteRx = 0;             ///< Serial byte received
  *  Initial setup.
  */
 void setup() {
-  Serial.begin(9600);
+  Serial1.begin(9600);
+  Serial.begin(57600);
   Serial.println("Ready.");
 }
 

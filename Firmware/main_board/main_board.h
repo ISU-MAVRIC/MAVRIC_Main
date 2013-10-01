@@ -3,6 +3,9 @@
 
 #include <stdint.h>
 
+const int motorEnum[] = {85, 81, 74, 10, 6, 2};
+const int motorCount = sizeof(motorEnum) / sizeof(motorEnum[0]);
+
 /* Type that is used for motor controls */
 struct motorByte {
   uint8_t motor_1;
