@@ -4,7 +4,7 @@
 
 #include "main_board.h"
 
-uint8_t buf[16];                ///< Serial buffer
+uint8_t buf[BUFFER_LENGTH];                ///< Serial buffer
 uint8_t bufStatus = false;      ///< Buffer packet received flag
 uint8_t bufPos = 0;             ///< Next buffer byte to write to
 uint8_t byteRx = 0;             ///< Serial byte received
@@ -13,8 +13,10 @@ uint8_t byteRx = 0;             ///< Serial byte received
  *  Initial setup.
  */
 void setup() {
-  Serial1.begin(9600);
-  Serial.begin(57600);
+  //Serial1.begin(9600);
+  Serial.begin(9600);
+  /// Camera control is UX3/TX3
+  Serial3.begin(9600);
   Serial.println("Ready.");
 }
 
@@ -29,7 +31,7 @@ void setup() {
  *  
  */
 void parsePacket() {
-  char packetType = buf[0];  /// Type of packet being sent
+  char packetType = buf[1];  /// Type of packet being sent
   
   switch(packetType) {    
     case ('C'):      /// Command packet
@@ -76,6 +78,8 @@ void sendCommand() {
       
     case ('C'):      /// Camera Control command
       Serial.println("Camera Control command.");
+      /// Send to Camera board via serial
+      Serial3.write(buf, BUFFER_LENGTH);
       break;
       
     case ('A'):      /// Arm Control command
@@ -99,12 +103,15 @@ void loop() {
     byteRx = Serial.read();
     if(bufStatus) { /// If byte received is the start of a packet
       if(byteRx == '>') {  /// If byte received is the end of a packet
+        buf[bufPos] = byteRx
         parsePacket();
       } else {
         buf[bufPos++] = byteRx;  /// Add byte received to buffer, go to next postion in buffer
       }
     } else {  /// If first byte of a packet has not yet been received
-      if(byteRx == '<') bufStatus = true;  /// Start of a packet received
+      if(byteRx == '<'){
+        bufStatus = true;  /// Start of a packet received
+        buf[bufPos++] = byteRx;
     }    
   }
 }

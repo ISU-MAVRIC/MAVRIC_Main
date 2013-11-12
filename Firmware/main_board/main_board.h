@@ -3,6 +3,8 @@
 
 #include <stdint.h>
 
+#define BUFFER_LENGTH 16
+
 const int motorEnum[] = {85, 81, 74, 10, 6, 2};
 const int motorCount = sizeof(motorEnum) / sizeof(motorEnum[0]);
 
