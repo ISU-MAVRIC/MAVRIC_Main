@@ -22,7 +22,7 @@ Sabertooth wheel[NUM_MOTORS] = {
     //Communications Serial Port
     //Serial.begin(9600);
     //Wheel Motor Controller Serial Port
-    Serial.begin(9600);
+    Serial.begin(57600);
     Serial1.begin(9600);
     Serial.println("Initializing SyRen Controllers");
     for(int i = 0; i < NUM_MOTORS; i++)
