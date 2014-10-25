@@ -25,10 +25,10 @@ void setup()
   Serial.begin(57600);
   Serial1.begin(9600);
   Serial.println("Initializing SyRen Controllers");
-  //  for(int i = 0; i < NUM_MOTORS; i++)
-  //  {
-  //    wheel[i].autobaud();
-  //  }
+  for(int i = 0; i < NUM_MOTORS; i++)
+  {
+    wheel[i].autobaud();
+  }
   Serial.println("I'm Alive Now...");
 
 }
@@ -83,14 +83,17 @@ void loop()
         //Serial.println(rightSpeed);
       }
       Serial.read(); //discard 
-      
-      int leftPower = parseInt(leftSpeed);
+
+        int leftPower = parseInt(leftSpeed);
       int rightPower = parseInt(rightSpeed);
       Serial.print("L:");
       Serial.print(leftPower);
       Serial.print('\t');
       Serial.print("R:");
       Serial.println(rightPower);
+
+      setSpeedLeftMotors(leftPower);
+      setSpeedRightMotors(rightPower);
     }
   }
 }
@@ -164,6 +167,7 @@ void sweep()
     delay(20);
   }
 }
+
 
 
 
