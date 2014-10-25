@@ -90,7 +90,8 @@ void loop()
       Serial.print(leftPower);
       Serial.print('\t');
       Serial.print("R:");
-      Serial.println(rightPower);
+      Serial.print(rightPower);
+      Serial.print('\n');
 
       setSpeedLeftMotors(leftPower);
       setSpeedRightMotors(rightPower);
