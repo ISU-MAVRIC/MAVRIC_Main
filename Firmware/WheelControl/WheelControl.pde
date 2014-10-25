@@ -14,30 +14,30 @@ Sabertooth wheel[NUM_MOTORS] = {
   Sabertooth(132, Serial1), //Right Mid
   Sabertooth(133, Serial1) //Right Back
   };
-  
+
   int power = 0;
 
-  void setup()
-  {
-    //Communications Serial Port
-    //Serial.begin(9600);
-    //Wheel Motor Controller Serial Port
-    Serial.begin(57600);
-    Serial1.begin(9600);
-    Serial.println("Initializing SyRen Controllers");
-    for(int i = 0; i < NUM_MOTORS; i++)
-    {
-      wheel[i].autobaud();
-    }
-    Serial.println("I'm Alive Now...");
+void setup()
+{
+  //Communications Serial Port
+  //Serial.begin(9600);
+  //Wheel Motor Controller Serial Port
+  Serial.begin(57600);
+  Serial1.begin(9600);
+  Serial.println("Initializing SyRen Controllers");
+  //  for(int i = 0; i < NUM_MOTORS; i++)
+  //  {
+  //    wheel[i].autobaud();
+  //  }
+  Serial.println("I'm Alive Now...");
 
-  }
+}
 
 int parseInt(String numberStr)
 {
   boolean isNegative = false;
   int value = 0;
-  int c;
+  char c;
 
   for(int i = 0; i < numberStr.length(); i++)
   {
@@ -60,6 +60,44 @@ int parseInt(String numberStr)
 
 void loop()
 {
+  //expecting packet of format <+000 -000>
+  if(Serial.available() >= 11)
+  {
+    char c = Serial.read();
+    //Serial.println(c);
+    String leftSpeed = "";
+    String rightSpeed = "";
+    if(c == '<')
+    {
+      //Serial.println("Left Speed String Building:");
+      for(int i = 0; i < 4; i++)
+      {
+        leftSpeed += (char) Serial.read();
+        //Serial.println(leftSpeed);
+      } 
+      Serial.read(); //discard middle "space" character
+      //Serial.println("Right Speed String Building:");
+      for(int i = 0; i < 4; i++)
+      {
+        rightSpeed += (char) Serial.read(); 
+        //Serial.println(rightSpeed);
+      }
+      Serial.read(); //discard 
+      
+      int leftPower = parseInt(leftSpeed);
+      int rightPower = parseInt(rightSpeed);
+      Serial.print("L:");
+      Serial.print(leftPower);
+      Serial.print('\t');
+      Serial.print("R:");
+      Serial.println(rightPower);
+    }
+  }
+}
+
+
+void frCharControl()
+{
   if(Serial.available())
   {
     char ch = Serial.read();
@@ -80,6 +118,22 @@ void loop()
 void setSpeedAllMotors(int power)
 {
   for(int i = 0; i < NUM_MOTORS; i++)
+  {
+    wheel[i].motor(power);
+  }
+}
+
+void setSpeedLeftMotors(int power)
+{
+  for(int i = 0; i < 3; i++)
+  {
+    wheel[i].motor(power);
+  }
+}
+
+void setSpeedRightMotors(int power)
+{
+  for(int i = 3; i < 6; i++)
   {
     wheel[i].motor(power);
   }
@@ -110,6 +164,9 @@ void sweep()
     delay(20);
   }
 }
+
+
+
 
 
 
