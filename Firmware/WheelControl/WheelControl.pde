@@ -1,6 +1,7 @@
-// Sweep Sample for Packet Serial
-// Copyright (c) 2012 Dimension Engineering LLC
-// See license.txt for license details.
+//Primitive Wheel Control
+//Receives primitive packet over serial
+//Sets wheel power to corresponding vals
+//Sends back wheel powers
 
 #include <Sabertooth.h>
 
@@ -15,22 +16,61 @@ Sabertooth wheel[NUM_MOTORS] = {
   Sabertooth(133, Serial1) //Right Back
   };
 
-  int power = 0;
 
-void setup()
-{
-  //Communications Serial Port
-  //Serial.begin(9600);
-  //Wheel Motor Controller Serial Port
-  Serial.begin(57600);
-  Serial1.begin(9600);
-  Serial.println("Initializing SyRen Controllers");
-  for(int i = 0; i < NUM_MOTORS; i++)
+  void setup()
   {
-    wheel[i].autobaud();
-  }
-  Serial.println("I'm Alive Now...");
+    //Wireless Communications
+    Serial.begin(57600);
+   //Syren Controller Network
+    Serial1.begin(9600);
+    Serial.println("Initializing SyRen Controllers");
+    for(int i = 0; i < NUM_MOTORS; i++)
+    {
+      wheel[i].autobaud();
+    }
+    Serial.println("I'm Alive Now...");
 
+  }
+
+void loop()
+{
+  //expecting packet of format <+000 -000>
+  if(Serial.available() >= 11)
+  {
+    char c = Serial.read();
+    //Serial.println(c);
+    String leftSpeed = "";
+    String rightSpeed = "";
+    if(c == '<')
+    {
+      //Serial.println("Left Speed String Building:");
+      for(int i = 0; i < 4; i++)
+      {
+        leftSpeed += (char) Serial.read();
+        //Serial.println(leftSpeed);
+      } 
+      Serial.read(); //discard middle "space" character
+      //Serial.println("Right Speed String Building:");
+      for(int i = 0; i < 4; i++)
+      {
+        rightSpeed += (char) Serial.read(); 
+        //Serial.println(rightSpeed);
+      }
+      Serial.read(); //discard ">"
+
+      int leftPower = parseInt(leftSpeed);
+      int rightPower = parseInt(rightSpeed);
+      Serial.print("L:");
+      Serial.print(leftPower);
+      Serial.print('\t');
+      Serial.print("R:");
+      Serial.print(rightPower);
+      Serial.print('\n');
+
+      setSpeedLeftMotors(leftPower);
+      setSpeedRightMotors(rightPower);
+    }
+  }
 }
 
 int parseInt(String numberStr)
@@ -58,67 +98,6 @@ int parseInt(String numberStr)
   return value;
 }
 
-void loop()
-{
-  //expecting packet of format <+000 -000>
-  if(Serial.available() >= 11)
-  {
-    char c = Serial.read();
-    //Serial.println(c);
-    String leftSpeed = "";
-    String rightSpeed = "";
-    if(c == '<')
-    {
-      //Serial.println("Left Speed String Building:");
-      for(int i = 0; i < 4; i++)
-      {
-        leftSpeed += (char) Serial.read();
-        //Serial.println(leftSpeed);
-      } 
-      Serial.read(); //discard middle "space" character
-      //Serial.println("Right Speed String Building:");
-      for(int i = 0; i < 4; i++)
-      {
-        rightSpeed += (char) Serial.read(); 
-        //Serial.println(rightSpeed);
-      }
-      Serial.read(); //discard 
-
-        int leftPower = parseInt(leftSpeed);
-      int rightPower = parseInt(rightSpeed);
-      Serial.print("L:");
-      Serial.print(leftPower);
-      Serial.print('\t');
-      Serial.print("R:");
-      Serial.print(rightPower);
-      Serial.print('\n');
-
-      setSpeedLeftMotors(leftPower);
-      setSpeedRightMotors(rightPower);
-    }
-  }
-}
-
-
-void frCharControl()
-{
-  if(Serial.available())
-  {
-    char ch = Serial.read();
-    if(ch == 'f')
-    {
-      power += 20;
-    } 
-    else if(ch == 'r')
-    {
-      power -= 20;
-    }
-    power = constrain(power, -127, 127);
-    Serial.println(power);
-    setSpeedAllMotors(power);
-  }
-}
-
 void setSpeedAllMotors(int power)
 {
   for(int i = 0; i < NUM_MOTORS; i++)
@@ -144,30 +123,6 @@ void setSpeedRightMotors(int power)
 }
 
 
-void sweep()
-{
-
-  // Ramp motor 1 from -127 to 127 (full reverse to full forward),
-  // waiting 20 ms (1/50th of a second) per value.
-  for (power = -80; power <= 80; power ++)
-  {
-    for(int i = 0; i < NUM_MOTORS; i++)
-    {
-      wheel[i].motor(power);
-    }
-    delay(20);
-  }
-
-  // Now go back the way we came.
-  for (power = 80; power >= -80; power --)
-  {
-    for(int i = 0; i < NUM_MOTORS; i++)
-    {
-      wheel[i].motor(power);
-    }
-    delay(20);
-  }
-}
 
 
 
