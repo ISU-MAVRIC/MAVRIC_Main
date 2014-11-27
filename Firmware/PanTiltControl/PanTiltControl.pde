@@ -1,6 +1,7 @@
 #include <Servo.h> 
 
-int temp;
+int temp = 0;
+
 Servo servo1;
 int rightSpeed;
 
@@ -42,7 +43,7 @@ servo1.write(temp);
       }
       Serial.read(); //discard ">"
 
-      temp = parseInt(leftSpeed);
+      temp = temp + parseInt(leftSpeed);
       
       Serial.println(temp);
       //int rightPower = parseInt(rightSpeed);
