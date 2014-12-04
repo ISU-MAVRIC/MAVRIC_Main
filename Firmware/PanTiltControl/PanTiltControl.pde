@@ -1,6 +1,6 @@
 #include <Servo.h> 
 
-int temp = 0;
+int temp = 10;
 
 Servo servo1;
 int rightSpeed;
@@ -10,16 +10,17 @@ void setup()
 { 
   Serial.begin(57600);
   servo1.attach(9);
-  servo1.write(0);  // set servo to max speed
-  
+  servo1.write(temp);  // set servo to max speed
+
   Serial.println("I'm Ready");
-  
+
 } 
 
 void loop() {
-servo1.write(temp);
+  temp = constrain(temp, 3, 180);
+  servo1.write(temp);
 
-//expecting packet of format <+000 -000>
+  //expecting packet of format <+000 -000>
   if(Serial.available() >= 11)
   {
     char c = Serial.read();
@@ -44,12 +45,12 @@ servo1.write(temp);
       Serial.read(); //discard ">"
 
       temp = temp + parseInt(leftSpeed);
-      
+
       Serial.println(temp);
       //int rightPower = parseInt(rightSpeed);
     }
   }
- 
+
 } 
 
 
@@ -77,3 +78,4 @@ int parseInt(String numberStr)
   }
   return value;
 }
+
