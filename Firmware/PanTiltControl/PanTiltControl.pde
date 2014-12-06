@@ -1,53 +1,56 @@
 #include <Servo.h> 
 
-int temp = 10;
+int tilt =55;
+int pan = 77;
 
 Servo servo1;
-int rightSpeed;
+Servo servo2;
 
 
 void setup() 
 { 
   Serial.begin(57600);
   servo1.attach(9);
-  servo1.write(temp);  // set servo to max speed
+  servo1.write(tilt);
+  servo2.attach(8);
+  servo2.write(pan);
 
   Serial.println("I'm Ready");
 
 } 
 
 void loop() {
-  temp = constrain(temp, 3, 180);
-  servo1.write(temp);
-
+  tilt = constrain(tilt, 10, 180);
+  servo1.write(tilt);
+  pan = constrain(pan, 10, 180);
+  servo2.write(pan);
   //expecting packet of format <+000 -000>
   if(Serial.available() >= 11)
   {
+    String panspeed = "";
     char c = Serial.read();
-    //Serial.println(c);
-    String leftSpeed = "";
-    //String rightSpeed = "";
+    String tiltspeed = "";
     if(c == '<')
     {
       //Serial.println("Left Speed String Building:");
       for(int i = 0; i < 4; i++)
       {
-        leftSpeed += (char) Serial.read();
-        //Serial.println(leftSpeed);
+        tiltspeed += (char) Serial.read();
+        //Serial.println(tiltspeed);
       } 
       Serial.read(); //discard middle "space" character
       //Serial.println("Right Speed String Building:");
       for(int i = 0; i < 4; i++)
       {
-        rightSpeed += (char) Serial.read(); 
-        //Serial.println(rightSpeed);
+        panspeed += (char) Serial.read(); 
+        //Serial.println(panspeed);
       }
       Serial.read(); //discard ">"
 
-      temp = temp + parseInt(leftSpeed);
-
-      Serial.println(temp);
-      //int rightPower = parseInt(rightSpeed);
+      tilt = tilt + parseInt(tiltspeed);
+      pan = pan + parseInt(panspeed);
+      Serial.println(tilt);
+      Serial.println(pan);
     }
   }
 
