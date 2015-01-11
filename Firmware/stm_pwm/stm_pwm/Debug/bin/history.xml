@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<history>
+   <processor signature="4.9.3 -mcpu=cortex-m4 -mthumb -g -nostartfiles -Map=stm_pwm.map -O0 --gc-sections -LC:\CooCox\CoIDE\configuration\ProgramData\stm_pwm -TC:\CooCox\CoIDE\configuration\ProgramData\stm_pwm/arm-gcc-link.ld -g">
+      <target file="stm_pwm.elf" lastModified="14ad7201f59">
+         <source file="..\obj\startup_stm32f4xx.o" lastModified="14ad7201b12"/>
+         <source file="..\obj\main.o" lastModified="14ad7201b61"/>
+         <source file="..\obj\stm32f4xx_rcc.o" lastModified="14ad7201bc9"/>
+         <source file="..\obj\stm32f4xx_gpio.o" lastModified="14ad7201c19"/>
+         <source file="..\obj\system_stm32f4xx.o" lastModified="14ad7201c57"/>
+         <source file="..\obj\syscalls.o" lastModified="14ad7201c92"/>
+         <source file="..\obj\misc.o" lastModified="14ad7201cd9"/>
+         <source file="..\obj\stm32f4xx_tim.o" lastModified="14ad7201d95"/>
+      </target>
+   </processor>
+</history>
