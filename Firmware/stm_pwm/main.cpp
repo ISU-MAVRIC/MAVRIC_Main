@@ -72,29 +72,16 @@ void NVIC_configuration() {
 void gpio_configuration() {
 	GPIO_InitTypeDef gpio;
 
-	//Port A Pin 5 PWM2/1 and Port A Pin 6 PWM3/1
-	gpio.GPIO_Pin = GPIO_Pin_5;
+	//Port A Pin 5 PWM2/1
+	gpio.GPIO_Pin = GPIO_Pin_5;;
 	gpio.GPIO_Mode = GPIO_Mode_AF;
 	gpio.GPIO_OType = GPIO_OType_PP;
 	gpio.GPIO_PuPd = GPIO_PuPd_NOPULL;
 	gpio.GPIO_Speed = GPIO_Speed_100MHz;
 	GPIO_Init(GPIOA, &gpio);
 
-	//Connect to TIM2 ... Called "Alternative Function" but not
-	//sure what it is doing exactly
+	//Alternative Function for PWM2/1
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource5, GPIO_AF_TIM2);
-
-	//Port A Pin 6 PWM3/1
-	gpio.GPIO_Pin = GPIO_Pin_6;
-	gpio.GPIO_Mode = GPIO_Mode_AF;
-	gpio.GPIO_OType = GPIO_OType_PP;
-	gpio.GPIO_PuPd = GPIO_PuPd_NOPULL;
-	gpio.GPIO_Speed = GPIO_Speed_100MHz;
-	GPIO_Init(GPIOA, &gpio);
-
-	//Connect to TIM2 ... Called "Alternative Function" but not
-	//sure what it is doing exactly
-	GPIO_PinAFConfig(GPIOA, GPIO_PinSource6, GPIO_AF_TIM3);
 
 	//Port B Pin 3 PWM2/2
 	gpio.GPIO_Pin = GPIO_Pin_3;
@@ -104,7 +91,7 @@ void gpio_configuration() {
 	gpio.GPIO_Speed = GPIO_Speed_100MHz;
 	GPIO_Init(GPIOB, &gpio);
 
-	//See Port A GPIO_PinAFConfig
+	//Alternative Function for PWM2/2
 	GPIO_PinAFConfig(GPIOB, GPIO_PinSource3, GPIO_AF_TIM2);
 
 	//Port C Pin 13 USER_BUTTON
@@ -122,6 +109,7 @@ void gpio_configuration() {
 void TIM2_configuration() {
 	//Timer Output Comparator Struct
 	TIM_OCInitTypeDef oc;
+
 	//Time Base Struct gets counters all nice and configured
 	TIM_TimeBaseInitTypeDef tb;
 
@@ -144,39 +132,11 @@ void TIM2_configuration() {
 	TIM_OC1PreloadConfig(TIM2, TIM_OCPreload_Enable);
 	//PWM2/2
 	TIM_OC2PreloadConfig(TIM2, TIM_OCPreload_Enable);
-
+	//Set up interrupt for the timer
 	TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
 
 	TIM_Cmd(TIM2, ENABLE);
 }
-
-//void TIM3_configuration() {
-//	//Timer Output Comparator Struct
-//	TIM_OCInitTypeDef oc;
-//	//Time Base Struct gets counters all nice and configured
-//	TIM_TimeBaseInitTypeDef tb;
-//
-//	tb.TIM_Prescaler = 15;
-//	tb.TIM_Period = 20000 - 1;
-//	tb.TIM_ClockDivision = 0;
-//	tb.TIM_CounterMode = TIM_CounterMode_Up;
-//	TIM_TimeBaseInit(TIM3, &tb);
-//
-//	TIM_ARRPreloadConfig(TIM3, ENABLE);
-//
-//	oc.TIM_OCMode = TIM_OCMode_PWM1;
-//	oc.TIM_OutputState = TIM_OutputState_Enable;
-//	oc.TIM_Pulse = 1500;
-//	oc.TIM_OCNPolarity = TIM_OCPolarity_High;
-//	TIM_OC1Init(TIM3, &oc);
-//
-//	//PWM3/1
-//	TIM_OC1PreloadConfig(TIM3, TIM_OCPreload_Enable);
-//
-//	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
-//
-//	TIM_Cmd(TIM3, ENABLE);
-//}
 
 int main() {
 	RCC_configuration();
@@ -192,11 +152,14 @@ extern "C" void TIM2_IRQHandler() {
 	if (TIM_GetITStatus(TIM2, TIM_IT_Update) != RESET) {
 		TIM_ClearITPendingBit(TIM2, TIM_IT_Update);
 
-		int width = 1500;
+		int width1 = 1500;
+		int width2 = 1500;
 		if (!pressed) {
-			width = 1550;
+			width1 = 1550;
+			width2 = 1650;
 		}
 
-		TIM_SetCompare1(TIM2, width);
+		TIM_SetCompare1(TIM2, width1);
+		TIM_SetCompare2(TIM2, width2);
 	}
 }
