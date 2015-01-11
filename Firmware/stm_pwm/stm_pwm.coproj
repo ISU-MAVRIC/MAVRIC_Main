@@ -7,7 +7,7 @@
         <Option name="OptimizationLevel" value="0"/>
         <Option name="UseFPU" value="0"/>
         <Option name="UserEditCompiler" value=""/>
-        <Option name="SupportCPlusplus" value="0"/>
+        <Option name="SupportCPlusplus" value="1"/>
         <Includepaths>
           <Includepath path="."/>
         </Includepaths>
@@ -16,15 +16,18 @@
           <Define name="STM32F4XX"/>
           <Define name="USE_STDPERIPH_DRIVER"/>
           <Define name="__ASSEMBLY__"/>
+          <Define name="SUPPORT_CPLUSPLUS"/>
         </DefinedSymbols>
       </Compile>
       <Link useDefault="0">
         <Option name="DiscardUnusedSection" value="0"/>
         <Option name="UserEditLinkder" value=""/>
         <Option name="UseMemoryLayout" value="1"/>
-        <Option name="nostartfiles" value="1"/>
+        <Option name="nostartfiles" value="0"/>
         <Option name="LTO" value="0"/>
         <Option name="IsNewStartupCode" value="1"/>
+        <Option name="Library" value="Not use C Library"/>
+        <Option name="UserEditLinker" value="-lstdc++; "/>
         <LinkedLibraries/>
         <MemoryAreas debugInFlashNotRAM="1">
           <Memory name="IROM1" type="ReadOnly" size="0x00040000" startValue="0x08000000"/>

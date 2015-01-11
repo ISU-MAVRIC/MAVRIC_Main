@@ -4,43 +4,14 @@
 #include "stm32f4xx_tim.h"
 #include "misc.h"
 
-//void initRCC(void) {
-//	//Enable High Speed Internal Oscillator
-//	RCC_HSICmd(ENABLE);
-//	while (RCC_GetFlagStatus(RCC_FLAG_HSIRDY) == RESET);
-//
-//	//Enable PLL
-//	RCC_PLLConfig(RCC_PLLSource_HSI, 12, 252, 8, 4);
-//	RCC_PLLCmd(ENABLE);
-//	while (RCC_GetFlagStatus(RCC_FLAG_PLLRDY) == RESET);
-//
-//	//Set PLL as System Clock
-//	RCC_SYSCLKConfig(RCC_SYSCLKSource_PLLCLK);
-//
-//	//Update State
-//	SystemCoreClockUpdate();
-//}
-//
-//	// Setup timer
-//	TIM_TimeBaseInitTypeDef timer;
-//	timer.TIM_Prescaler = 4200;
-//	timer.TIM_CounterMode = TIM_CounterMode_Up;
-//	timer.TIM_Period = 16;
-//	timer.TIM_ClockDivision = TIM_CKD_DIV1;
-//	timer.TIM_RepetitionCounter = 0;
-//	TIM_TimeBaseInit(TIM3, &timer);
-//	TIM_Cmd(TIM3, ENABLE);
-//	TIM_ClearITPendingBit(TIM3, TIM_IT_Update);
-//	TIM_ITConfig(TIM3, TIM_IT_Update, ENABLE);
-
 //volatile because it is accessed in an interrupt i believe
 //totally a guess though. values are in microseconds (us)
-volatile int servo_angle[6] = { 1500, 1500, 1500, 1500, 1500, 1500 };
+volatile int servo_angle[3] = { 1500, 1500, 1500 };
 int pressed = 0;
 
 void RCC_configuration() {
-	//TIM2, TIM3 clock enable
-	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2 | RCC_APB1Periph_TIM3, ENABLE);
+	//TIM2 clock enable
+	RCC_APB1PeriphClockCmd(RCC_APB1Periph_TIM2, ENABLE);
 
 	//GPIOA, GPIOB, GPIOC Clock Enable
 	RCC_AHB1PeriphClockCmd(
@@ -60,20 +31,13 @@ void NVIC_configuration() {
 	nvic.NVIC_IRQChannelSubPriority = 1;
 	nvic.NVIC_IRQChannelCmd = ENABLE;
 	NVIC_Init(&nvic);
-
-	//Set up TIM3 Interrupts
-	nvic.NVIC_IRQChannel = TIM3_IRQn;
-	nvic.NVIC_IRQChannelPreemptionPriority = 0;
-	nvic.NVIC_IRQChannelSubPriority = 1;
-	nvic.NVIC_IRQChannelCmd = ENABLE;
-	NVIC_Init(&nvic);
 }
 
 void gpio_configuration() {
 	GPIO_InitTypeDef gpio;
 
-	//Port A Pin 5 PWM2/1
-	gpio.GPIO_Pin = GPIO_Pin_5;;
+	//Port A Pin 5 PWM2/1 and Port A Pin 2 PWM2/3
+	gpio.GPIO_Pin = GPIO_Pin_5 | GPIO_Pin_2;
 	gpio.GPIO_Mode = GPIO_Mode_AF;
 	gpio.GPIO_OType = GPIO_OType_PP;
 	gpio.GPIO_PuPd = GPIO_PuPd_NOPULL;
@@ -82,6 +46,8 @@ void gpio_configuration() {
 
 	//Alternative Function for PWM2/1
 	GPIO_PinAFConfig(GPIOA, GPIO_PinSource5, GPIO_AF_TIM2);
+	//Alternative Function for PWM2/3
+	GPIO_PinAFConfig(GPIOA, GPIO_PinSource2, GPIO_AF_TIM2);
 
 	//Port B Pin 3 PWM2/2
 	gpio.GPIO_Pin = GPIO_Pin_3;
@@ -125,13 +91,20 @@ void TIM2_configuration() {
 	oc.TIM_OutputState = TIM_OutputState_Enable;
 	oc.TIM_Pulse = 1500;
 	oc.TIM_OCNPolarity = TIM_OCPolarity_High;
+	//PWM2/1
 	TIM_OC1Init(TIM2, &oc);
+	//PWM2/2
 	TIM_OC2Init(TIM2, &oc);
+	//PWM2/3
+	TIM_OC3Init(TIM2, &oc);
 
 	//PWM2/1
 	TIM_OC1PreloadConfig(TIM2, TIM_OCPreload_Enable);
 	//PWM2/2
 	TIM_OC2PreloadConfig(TIM2, TIM_OCPreload_Enable);
+	//PWM2/3
+	TIM_OC3PreloadConfig(TIM2, TIM_OCPreload_Enable);
+
 	//Set up interrupt for the timer
 	TIM_ITConfig(TIM2, TIM_IT_Update, ENABLE);
 
@@ -154,12 +127,15 @@ extern "C" void TIM2_IRQHandler() {
 
 		int width1 = 1500;
 		int width2 = 1500;
+		int width3 = 1500;
 		if (!pressed) {
 			width1 = 1550;
 			width2 = 1650;
+			width3 = 1750;
 		}
 
 		TIM_SetCompare1(TIM2, width1);
 		TIM_SetCompare2(TIM2, width2);
+		TIM_SetCompare3(TIM2, width3);
 	}
 }
