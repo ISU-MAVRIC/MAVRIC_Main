@@ -122,7 +122,7 @@ Discarded input sections
                 0x00000000       0x3c ..\obj\stm32f4xx_rcc.o
  .text.RCC_AHB3PeriphClockCmd
                 0x00000000       0x3c ..\obj\stm32f4xx_rcc.o
- .text.RCC_APB1PeriphClockCmd
+ .text.RCC_APB2PeriphClockCmd
                 0x00000000       0x3c ..\obj\stm32f4xx_rcc.o
  .text.RCC_AHB1PeriphResetCmd
                 0x00000000       0x3c ..\obj\stm32f4xx_rcc.o
@@ -481,6 +481,7 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm
                 0x08000240                CAN2_RX1_IRQHandler
                 0x08000240                EXTI3_IRQHandler
                 0x08000240                TIM8_TRG_COM_TIM14_IRQHandler
+                0x08000240                TIM1_UP_TIM10_IRQHandler
                 0x08000240                TIM8_UP_TIM13_IRQHandler
                 0x08000240                I2C3_ER_IRQHandler
                 0x08000240                EXTI0_IRQHandler
@@ -504,7 +505,6 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm
                 0x08000240                CAN1_RX1_IRQHandler
                 0x08000240                UART5_IRQHandler
                 0x08000240                DMA2_Stream0_IRQHandler
-                0x08000240                TIM4_IRQHandler
                 0x08000240                I2C1_EV_IRQHandler
                 0x08000240                DMA1_Stream6_IRQHandler
                 0x08000240                DMA1_Stream1_IRQHandler
@@ -562,20 +562,20 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm
  .text._Z18GPIO_configurationv
                 0x0800028c       0x7c ..\obj\main.o
                 0x0800028c                GPIO_configuration()
- .text._Z18TIM1_configurationv
+ .text._Z18TIM4_configurationv
                 0x08000308       0x9c ..\obj\main.o
-                0x08000308                TIM1_configuration()
+                0x08000308                TIM4_configuration()
  .text.main     0x080003a4       0x30 ..\obj\main.o
                 0x080003a4                main
- .text.TIM1_UP_TIM10_IRQHandler
+ .text.TIM4_IRQHandler
                 0x080003d4       0x80 ..\obj\main.o
-                0x080003d4                TIM1_UP_TIM10_IRQHandler
+                0x080003d4                TIM4_IRQHandler
  .text.RCC_AHB1PeriphClockCmd
                 0x08000454       0x3c ..\obj\stm32f4xx_rcc.o
                 0x08000454                RCC_AHB1PeriphClockCmd
- .text.RCC_APB2PeriphClockCmd
+ .text.RCC_APB1PeriphClockCmd
                 0x08000490       0x3c ..\obj\stm32f4xx_rcc.o
-                0x08000490                RCC_APB2PeriphClockCmd
+                0x08000490                RCC_APB1PeriphClockCmd
  .text.GPIO_Init
                 0x080004cc      0x11c ..\obj\stm32f4xx_gpio.o
                 0x080004cc                GPIO_Init
@@ -755,9 +755,9 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm
                 0x08002150        0xc ..\obj\main.o
  .ARM.extab.text._Z18GPIO_configurationv
                 0x0800215c        0xc ..\obj\main.o
- .ARM.extab.text._Z18TIM1_configurationv
+ .ARM.extab.text._Z18TIM4_configurationv
                 0x08002168        0xc ..\obj\main.o
- .ARM.extab.text.TIM1_UP_TIM10_IRQHandler
+ .ARM.extab.text.TIM4_IRQHandler
                 0x08002174        0xc ..\obj\main.o
  .ARM.extab     0x08002180       0x18 c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(pr-support.o)
                 0x08002198                __exidx_start = .
@@ -773,11 +773,11 @@ LOAD c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm
                 0x080021a0        0x8 ..\obj\main.o
  .ARM.exidx.text._Z18GPIO_configurationv
                 0x080021a8        0x8 ..\obj\main.o
- .ARM.exidx.text._Z18TIM1_configurationv
+ .ARM.exidx.text._Z18TIM4_configurationv
                 0x080021b0        0x8 ..\obj\main.o
  .ARM.exidx.text.main
                 0x080021b8        0x8 ..\obj\main.o
- .ARM.exidx.text.TIM1_UP_TIM10_IRQHandler
+ .ARM.exidx.text.TIM4_IRQHandler
                 0x080021c0       0x10 ..\obj\main.o
                                   0x8 (size before relaxing)
  .ARM.exidx     0x080021d0       0x78 c:/program files (x86)/gnu tools arm embedded/4.9 2014q4/bin/../lib/gcc/arm-none-eabi/4.9.3/armv7e-m\libgcc.a(unwind-arm.o)
@@ -979,20 +979,20 @@ OUTPUT(stm_pwm.elf elf32-littlearm)
  .debug_line    0x0000100c      0x2a4 ..\obj\misc.o
  .debug_line    0x000012b0      0xac9 ..\obj\stm32f4xx_tim.o
 
-.debug_str      0x00000000     0x21b1
+.debug_str      0x00000000     0x21a8
  .debug_str     0x00000000      0x149 ..\obj\startup_stm32f4xx.o
                                 0x15b (size before relaxing)
- .debug_str     0x00000149      0xbb5 ..\obj\main.o
-                                0xcf6 (size before relaxing)
- .debug_str     0x00000cfe      0x649 ..\obj\stm32f4xx_rcc.o
+ .debug_str     0x00000149      0xbac ..\obj\main.o
+                                0xced (size before relaxing)
+ .debug_str     0x00000cf5      0x649 ..\obj\stm32f4xx_rcc.o
                                 0x864 (size before relaxing)
- .debug_str     0x00001347      0x1b7 ..\obj\stm32f4xx_gpio.o
+ .debug_str     0x0000133e      0x1b7 ..\obj\stm32f4xx_gpio.o
                                 0x4b7 (size before relaxing)
- .debug_str     0x000014fe      0x12c ..\obj\system_stm32f4xx.o
+ .debug_str     0x000014f5      0x12c ..\obj\system_stm32f4xx.o
                                 0x3be (size before relaxing)
- .debug_str     0x0000162a      0x175 ..\obj\misc.o
+ .debug_str     0x00001621      0x175 ..\obj\misc.o
                                 0x3e2 (size before relaxing)
- .debug_str     0x0000179f      0xa12 ..\obj\stm32f4xx_tim.o
+ .debug_str     0x00001796      0xa12 ..\obj\stm32f4xx_tim.o
                                 0xde4 (size before relaxing)
 
 .debug_frame    0x00000000     0x1ab4
