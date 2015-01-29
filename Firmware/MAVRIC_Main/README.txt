@@ -1,0 +1,1 @@
+This project has been exported from the Mbed IDE. It compiles right out of the box in CooCox.
