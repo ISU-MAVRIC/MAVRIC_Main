@@ -101,41 +101,9 @@ void motor_status_packet()
                wheel_right_speed, wheel_right_speed, wheel_right_speed);
 }
 
-void update_motors()
-{
-    //ser.printf("Left: %d\tRight: %d\n", left_speed, right_speed);
-    int left_us = map(wheel_left_speed, 0, 255, 1000, 2000);
-    int right_us = map(wheel_right_speed, 0, 255, 1000, 2000);
-    //ser.printf("Left: %d\tRight: %d\n", left_us, right_us);
-    wheel_left.pulsewidth_us(left_us);
-    wheel_right.pulsewidth_us(right_us);
-}
-
-void arm_status_packet()
+void arm_status_packet()`
 {
     ser.printf("<sa%c%c%c>", arm_rotate_speed, arm_shoulder_speed, arm_elbow_speed);
-}
-
-void arm_control_packet()
-{
-    //CODE FOR PID
-    //ser.printf("Arm Control Packet\n");
-    //int shoulder_pos = buf[4] | buf[3] << 8;
-    //int elbow_pos = buf[6] | buf[5] <<8;
-    //ser.printf("SP: %d   EP: %d\n", shoulder_pos, elbow_pos);
-    //arm_shoulder_sp = ((float) atoi(shoulder_pos_str)) / ((float) 1000);
-    //arm_elbow_sp = ((float) atoi(elbow_pos_str)) / ((float) 1000);
-    //ser.printf("Shoulder SP: %.4f     Elbow SP: %.4f\n", arm_shoulder_sp, arm_elbow_sp);
-
-    int rotate_us = map(arm_rotate_speed, 0, 255, 1000, 2000);
-    int shoulder_us = map(arm_shoulder_speed, 0, 255, 1000, 2000);
-    int elbow_us = map(arm_elbow_speed, 0, 255, 1000, 2000);
-
-    arm_rotate.pulsewidth_us(rotate_us);
-    arm_shoulder.pulsewidth_us(shoulder_us);
-    arm_elbow.pulsewidth_us(elbow_us);
-
-    arm_status_packet();
 }
 
 void camera_status_packet()
@@ -143,44 +111,59 @@ void camera_status_packet()
     ser.printf("<sc%c%c%c>", cam_pan_pos, cam_tilt_pos, cam_zoom_pos);
 }
 
+
+void update_motors()
+{
+	//maps ASCII character values (0-255) to controller PWM timings between 1000 and 2000 us
+    int left_us = map(wheel_left_speed, 0, 255, 1000, 2000);
+    int right_us = map(wheel_right_speed, 0, 255, 1000, 2000);
+    wheel_left.pulsewidth_us(left_us);
+    wheel_right.pulsewidth_us(right_us);
+}
+
+void update_arm()
+{
+	//maps ASCII character values (0-255) to linear actuator and base controller PWM timings between 1000 and 2000 us
+    int rotate_us = map(arm_rotate_speed, 0, 255, 1000, 2000);
+    int shoulder_us = map(arm_shoulder_speed, 0, 255, 1000, 2000);
+    int elbow_us = map(arm_elbow_speed, 0, 255, 1000, 2000);
+    arm_rotate.pulsewidth_us(rotate_us);
+    arm_shoulder.pulsewidth_us(shoulder_us);
+    arm_elbow.pulsewidth_us(elbow_us);
+
+    arm_status_packet();
+}
+
 void update_camera()
 {
-    //ser.printf("Camera Gimbal Control\n");
-    //ser.printf("Left: %d\tRight: %d\n", cam_pan_pos, cam_tilt_pos);
+	//maps ASCII character values (0-255) to servo PWM timings between 1000 and 2000 us
     int cam_pan_us = map(cam_pan_pos, 0, 255, 1000, 2000);
     int cam_tilt_us = map(cam_tilt_pos, 0, 255, 1000, 2000);
-    //ser.printf("Left: %d\tRight: %d\n", left_us, right_us);
 
+    //write servo pulse values to the pan and tilt servos
     cam_pan.pulsewidth_us(cam_pan_us);
     cam_tilt.pulsewidth_us(cam_tilt_us);
 }
 
 void parse(char c)
-{   //ser.puts(buffer.c_str());
-    //ser.printf("Char: %c\n\n", c);
+{
     if (rx_state == NONE) {
         if (c == '<') {
-            rx_state = STARTED;
-            //ser.printf("STATE: STARTED\n");
+            rx_state = STARTED;			//if < is detected, start buffer
         }
     } else if (rx_state == STARTED) {
         if (c == 'c') {
-            rx_state = CONTROL;
-            //ser.printf("    STATE: CONTROL\n");
+            rx_state = CONTROL;			//if c is detected move to CONTROL state
         } else {
-            rx_state = NONE;
-            //ser.printf("        Invalid packet type: %c\n", c);
+            rx_state = NONE;			//if anything else is detected, the packet is invalid
         }
     } else if (rx_state == CONTROL) {
         if (c == 'm') {
-            rx_state = CONTROL_MOTOR;
-            //ser.printf("    STATE: CONTROL_MOTOR\n");
+            rx_state = CONTROL_MOTOR;	//if m is detected, move to CONTROL_MOTOR
         } else if (c == 'a') {
-            rx_state = CONTROL_ARM;
-            //ser.printf("    STATE: CONTROL_ARM\n");
+            rx_state = CONTROL_ARM;		//if a is detected, move to CONTROL_ARM
         } else if (c == 'c') {
-            rx_state = CONTROL_CAMERA;
-            //ser.printf("    STATE: CONTROL_CAMERA\n");
+            rx_state = CONTROL_CAMERA;	//if c is detected, move to CAMERA_CONTROL
         } else {
             rx_state = NONE;
             //ser.printf("        Invalid control packet type: %c\n", c);
@@ -196,13 +179,31 @@ void parse(char c)
                 buffer = "";
                 rx_state = NONE;
             } else {
-                //ser.printf("Unexpected data!");
                 rx_state = NONE;
             }
         } else {
             buffer += c;
         }
-    } else if (rx_state == CONTROL_CAMERA) {
+    } else if (rx_state == CONTROL_ARM) {
+            //printf("!!%d!!", buffer.length());
+            if (buffer.length() > 2) {
+                if (c == '>') {
+                	arm_rotate_speed = buffer[0];
+                	arm_shoulder_speed = buffer[1];
+                	arm_elbow_speed = buffer[2];
+                    update_motors();
+                    motor_status_packet();
+                    buffer = "";
+                    rx_state = NONE;
+                } else {
+                    //ser.printf("Unexpected data!");
+                    rx_state = NONE;
+                }
+            } else {
+                buffer += c;
+            }
+        }
+    else if (rx_state == CONTROL_CAMERA) {
         if(buffer.length() > 2){
             if (c == '>'){
                 cam_pan_pos = buffer[0];
@@ -218,7 +219,9 @@ void parse(char c)
         } else {
             buffer += c;
         }
-    } else {
+    }
+
+    else {
         //ser.printf("Unknown parser state!");
         buffer = "";
         rx_state = NONE;
