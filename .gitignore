@@ -1,1 +1,9 @@
-*bak
+# KiCad
+*.bak
+
+# CoIDE
+*.coproj
+*.cogui
+project.pbxproj
+history.xml
+dependencies.xml
