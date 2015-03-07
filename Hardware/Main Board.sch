@@ -5,13 +5,14 @@ LIBS:conn
 LIBS:Passives
 LIBS:STMicroelectronics
 LIBS:MAVRIClib
-EELAYER 27 0
+LIBS:Main Board-cache
+EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 2
 Title ""
-Date "21 feb 2015"
+Date "7 mar 2015"
 Rev ""
 Comp ""
 Comment1 ""
@@ -20,7 +21,7 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L CAPACITOR 4.7uF
+L Capacitor 4.7uF
 U 1 1 54E8BD76
 P 8450 3500
 F 0 "4.7uF" V 8300 3600 60  0000 L CNN
@@ -37,7 +38,7 @@ F 9 "X5R" V 8600 3600 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CAPACITOR .1uF
+L Capacitor .1uF
 U 1 1 54E8BDA9
 P 8800 3500
 F 0 ".1uF" V 8650 3600 60  0000 L CNN
@@ -54,7 +55,7 @@ F 9 "X5R" V 8950 3600 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CAPACITOR .1uF
+L Capacitor .1uF
 U 1 1 54E8BE29
 P 9150 3500
 F 0 ".1uF" V 9000 3600 60  0000 L CNN
@@ -71,7 +72,7 @@ F 9 "X5R" V 9300 3600 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CAPACITOR .1uF
+L Capacitor .1uF
 U 1 1 54E8BE35
 P 9500 3500
 F 0 ".1uF" V 9350 3600 60  0000 L CNN
@@ -88,7 +89,7 @@ F 9 "X5R" V 9650 3600 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CAPACITOR .1uF
+L Capacitor .1uF
 U 1 1 54E8BE41
 P 8100 3500
 F 0 ".1uF" V 7950 3600 60  0000 L CNN
@@ -105,7 +106,7 @@ F 9 "X5R" V 8250 3600 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CAPACITOR .1uF
+L Capacitor .1uF
 U 1 1 54E8BE4D
 P 7750 3500
 F 0 ".1uF" V 7600 3600 60  0000 L CNN
@@ -122,7 +123,7 @@ F 9 "X5R" V 7900 3600 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CAPACITOR .1uF
+L Capacitor .1uF
 U 1 1 54E8BE59
 P 7400 3500
 F 0 ".1uF" V 7250 3600 60  0000 L CNN
@@ -139,7 +140,7 @@ F 9 "X5R" V 7550 3600 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L FERRITE FB?
+L Ferrite FB?
 U 1 1 54E8BEB9
 P 9750 3250
 F 0 "FB?" V 9600 3350 60  0000 L CNN
@@ -156,7 +157,7 @@ F 9 "100mO" V 9900 3350 50  0000 L CNN "DCR"
 	1    0    0    -1  
 $EndComp
 $Comp
-L CAPACITOR .1uF
+L Capacitor .1uF
 U 1 1 54E8BF47
 P 10000 3500
 F 0 ".1uF" V 9850 3600 60  0000 L CNN
@@ -173,7 +174,7 @@ F 9 "X5R" V 10150 3600 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CAPACITOR .1uF
+L Capacitor .1uF
 U 1 1 54E8BF53
 P 10350 3500
 F 0 ".1uF" V 10200 3600 60  0000 L CNN
@@ -262,7 +263,7 @@ F 3 "" H 5500 1950 60  0000 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CAPACITOR C1
+L Capacitor C1
 U 1 1 54E8FFCC
 P 6000 2700
 F 0 "C1" V 5850 2800 60  0000 L CNN
@@ -298,7 +299,7 @@ OSC_OUT
 Text Label 5750 1850 0    60   ~ 0
 NRST
 $Comp
-L CAPACITOR C2
+L Capacitor C2
 U 1 1 54E902D3
 P 5550 2700
 F 0 "C2" V 5400 2800 60  0000 L CNN
@@ -326,7 +327,7 @@ F 3 "~" H 7850 1300 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L CAPACITOR C3
+L Capacitor C3
 U 1 1 54E90815
 P 7400 1800
 F 0 "C3" V 7250 1900 60  0000 L CNN
@@ -343,7 +344,7 @@ F 9 "C0G" V 7550 1900 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
-L CAPACITOR C4
+L Capacitor C4
 U 1 1 54E9089F
 P 8300 1800
 F 0 "C4" V 8150 1900 60  0000 L CNN
@@ -374,6 +375,73 @@ Text Label 7400 900  0    60   ~ 0
 OSC_IN
 Text Label 8300 900  0    60   ~ 0
 OSC_OUT
+Text Label 9450 1150 2    60   ~ 0
+Reg+3V3
+$Comp
+L GND #PWR?
+U 1 1 54E91751
+P 10350 3900
+F 0 "#PWR?" H 10350 3900 30  0001 C CNN
+F 1 "GND" H 10350 3830 30  0001 C CNN
+F 2 "" H 10350 3900 60  0000 C CNN
+F 3 "" H 10350 3900 60  0000 C CNN
+	1    10350 3900
+	1    0    0    -1  
+$EndComp
+Text Label 10450 3000 0    60   ~ 0
+VDDA
+$Sheet
+S 9750 1000 700  850 
+U 54E8D068
+F0 "Regulator +3v3" 50
+F1 "Regulator +3v3.sch" 50
+F2 "Reg+3v3" O L 9750 1150 60 
+F3 "REG1EN" I L 9750 1650 60 
+F4 "REG2EN" I L 9750 1750 60 
+F5 "Reg+5V" O L 9750 1250 60 
+$EndSheet
+$Comp
+L SN75176BDR U1
+U 1 1 54FB3511
+P 3800 2500
+F 0 "U1" H 3650 2050 60  0000 C CNN
+F 1 "SN75176BDR" H 3600 2650 60  0000 C CNN
+F 2 "" H 3800 2500 60  0000 C CNN
+F 3 "" H 3800 2500 60  0000 C CNN
+	1    3800 2500
+	1    0    0    -1  
+$EndComp
+Text Label 9400 1250 2    60   ~ 0
+Reg+5V
+Text Label 1850 5700 0    60   ~ 0
+GPIO_PC4_Reg1EN
+Text Label 1850 5800 0    60   ~ 0
+GPIO_PC5_Reg2EN
+Text Label 9400 1650 2    60   ~ 0
+GPIO_PC4_Reg1EN
+Text Label 9400 1750 2    60   ~ 0
+GPIO_PC5_Reg2EN
+Text Label 4200 2200 0    60   ~ 0
+Reg+5V
+Text Label 3000 2800 2    60   ~ 0
+USART1_TX
+Text Label 3000 2500 2    60   ~ 0
+USART1_RX
+Text Label 1400 2700 0    60   ~ 0
+USART1_TX
+Text Label 1400 2800 0    60   ~ 0
+USART1_RX
+$Comp
+L GND #PWR?
+U 1 1 54FB679B
+P 4200 2900
+F 0 "#PWR?" H 4200 2900 30  0001 C CNN
+F 1 "GND" H 4200 2830 30  0001 C CNN
+F 2 "" H 4200 2900 60  0000 C CNN
+F 3 "" H 4200 2900 60  0000 C CNN
+	1    4200 2900
+	1    0    0    -1  
+$EndComp
 Wire Wire Line
 	7400 1300 7550 1300
 Wire Wire Line
@@ -514,37 +582,57 @@ Wire Wire Line
 Connection ~ 7850 2200
 Wire Wire Line
 	9450 1150 9750 1150
-Text Label 9450 1150 2    60   ~ 0
-Reg+3v3
 Wire Wire Line
 	5300 2150 6000 2150
 Wire Wire Line
 	6000 3000 6000 2950
-$Comp
-L GND #PWR?
-U 1 1 54E91751
-P 10350 3900
-F 0 "#PWR?" H 10350 3900 30  0001 C CNN
-F 1 "GND" H 10350 3830 30  0001 C CNN
-F 2 "" H 10350 3900 60  0000 C CNN
-F 3 "" H 10350 3900 60  0000 C CNN
-	1    10350 3900
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	10350 3250 10350 3000
 Wire Wire Line
 	10350 3000 10450 3000
-Text Label 10450 3000 0    60   ~ 0
-VDDA
 Wire Wire Line
 	10350 3750 10350 3900
-$Sheet
-S 9750 1000 700  850 
-U 54E8D068
-F0 "Regulator +3v3" 50
-F1 "Regulator +3v3.sch" 50
-F2 "Reg+3v3" O L 9750 1150 60 
-F3 "REG1EN" I L 9750 1450 60 
-$EndSheet
+Wire Wire Line
+	4200 2500 4000 2500
+Wire Wire Line
+	4200 2200 4200 2500
+Wire Wire Line
+	9750 1250 9400 1250
+Wire Wire Line
+	1200 5700 1850 5700
+Wire Wire Line
+	1200 5800 1850 5800
+Wire Wire Line
+	9750 1650 9400 1650
+Wire Wire Line
+	9750 1750 9400 1750
+Wire Wire Line
+	3250 2700 3150 2700
+Wire Wire Line
+	3150 2700 3150 2600
+Wire Wire Line
+	1200 2600 3150 2600
+Wire Wire Line
+	3150 2600 3250 2600
+Connection ~ 3150 2600
+Wire Wire Line
+	3250 2800 3000 2800
+Wire Wire Line
+	3250 2500 3000 2500
+Wire Wire Line
+	1200 2700 1400 2700
+Wire Wire Line
+	1200 2800 1400 2800
+Wire Wire Line
+	4000 2800 4200 2800
+Wire Wire Line
+	4200 2800 4200 2900
+Wire Wire Line
+	4000 2600 4200 2600
+Wire Wire Line
+	4000 2700 4200 2700
+Text Label 4200 2600 0    60   ~ 0
+485_B
+Text Label 4200 2700 0    60   ~ 0
+485_A
 $EndSCHEMATC
