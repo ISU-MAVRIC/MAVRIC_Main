@@ -2,15 +2,15 @@ EESchema Schematic File Version 2
 LIBS:power
 LIBS:device
 LIBS:conn
+LIBS:MAVRIClib
 LIBS:Passives
 LIBS:STMicroelectronics
-LIBS:MAVRIClib
 LIBS:Main Board-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 2
+Sheet 1 3
 Title ""
 Date "7 mar 2015"
 Rev ""
@@ -635,4 +635,36 @@ Text Label 4200 2600 0    60   ~ 0
 485_B
 Text Label 4200 2700 0    60   ~ 0
 485_A
+Text HLabel 9500 5450 2    60   Output ~ 0
+Reg+5V
+Text Label 9350 5450 2    60   ~ 0
+Reg+5V
+$Sheet
+S 9500 4700 1050 900 
+U 551DB2D0
+F0 "Vernier Sensors Module" 60
+F1 "VernierSensors.sch" 60
+$EndSheet
+Wire Wire Line
+	9500 5450 9350 5450
+Text HLabel 9500 4900 2    60   Input ~ 0
+ANA1
+Text HLabel 9500 5050 2    60   Input ~ 0
+ANA2
+Wire Wire Line
+	9500 4900 9350 4900
+Wire Wire Line
+	9500 5050 9350 5050
+Text Label 9350 4900 2    60   ~ 0
+ADC1_IN0
+Text Label 9350 5050 2    60   ~ 0
+ADC1_IN1
+Wire Wire Line
+	1200 1800 1450 1800
+Wire Wire Line
+	1450 1900 1200 1900
+Text Label 1450 1900 0    60   ~ 0
+ADC1_IN1
+Text Label 1450 1800 0    60   ~ 0
+ADC1_IN0
 $EndSCHEMATC

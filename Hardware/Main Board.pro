@@ -1,6 +1,6 @@
-update=2/21/2015 11:15:51 AM
+update=4/3/2015 1:30:52 PM
 version=1
-last_client=eeschema
+last_client=kicad
 [cvpcb]
 version=1
 NetIExt=net
@@ -47,16 +47,11 @@ LibName16=valves
 version=1
 [eeschema]
 version=1
-LibDir=
-NetFmtName=
-RptD_X=0
-RptD_Y=100
-RptLab=1
-LabSize=60
+LibDir=C:/Users/Danny/Documents/GitHub/MAVRIC_Hardware/Kicad;C:/Users/Danny/Documents/GitHub/KiCadLib
 [eeschema/libraries]
 LibName1=power
 LibName2=device
 LibName3=conn
-LibName4=C:/Users/L502x-SSD/Documents/GitHub/KiCadLib/Symbols/Passives
-LibName5=C:/Users/L502x-SSD/Documents/GitHub/KiCadLib/Symbols/STMicroelectronics
-LibName6=C:/Users/L502x-SSD/Documents/GitHub/MAVRIC_Hardware/Kicad/MAVRIClib
+LibName4=MAVRIClib
+LibName5=Symbols/Passives
+LibName6=Symbols/STMicroelectronics
