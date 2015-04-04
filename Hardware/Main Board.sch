@@ -5,12 +5,13 @@ LIBS:conn
 LIBS:MAVRIClib
 LIBS:Passives
 LIBS:STMicroelectronics
+LIBS:Connectors
 LIBS:Main Board-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 3
+Sheet 1 4
 Title ""
 Date "7 mar 2015"
 Rev ""
@@ -442,15 +443,39 @@ F 3 "" H 4200 2900 60  0000 C CNN
 	1    4200 2900
 	1    0    0    -1  
 $EndComp
+Text Label 4200 2600 0    60   ~ 0
+485_B
+Text Label 4200 2700 0    60   ~ 0
+485_A
+Text HLabel 9500 5450 2    60   Output ~ 0
+Reg+5V
+Text Label 9350 5450 2    60   ~ 0
+Reg+5V
+$Sheet
+S 9500 4700 1300 1000
+U 551DB2D0
+F0 "Vernier Sensors Module" 60
+F1 "VernierSensors.sch" 60
+$EndSheet
+Text HLabel 9500 4900 2    60   Input ~ 0
+ANA1
+Text HLabel 9500 5050 2    60   Input ~ 0
+ANA2
+Text Label 9350 4900 2    60   ~ 0
+ADC1_IN0
+Text Label 9350 5050 2    60   ~ 0
+ADC1_IN1
+Text Label 1450 1900 0    60   ~ 0
+ADC1_IN1
+Text Label 1450 1800 0    60   ~ 0
+ADC1_IN0
 Wire Wire Line
 	7400 1300 7550 1300
 Wire Wire Line
 	7400 900  7400 1550
 Connection ~ 5850 3000
 Wire Wire Line
-	5550 3000 5850 3000
-Wire Wire Line
-	5850 3000 6000 3000
+	5550 3000 6000 3000
 Wire Wire Line
 	5550 2950 5550 3000
 Wire Wire Line
@@ -476,40 +501,14 @@ Wire Wire Line
 	5900 600  6100 600 
 Connection ~ 6100 1450
 Wire Wire Line
-	6650 3250 7400 3250
-Wire Wire Line
-	7400 3250 7750 3250
-Wire Wire Line
-	7750 3250 8100 3250
-Wire Wire Line
-	8100 3250 8450 3250
-Wire Wire Line
-	8450 3250 8800 3250
-Wire Wire Line
-	8800 3250 9150 3250
-Wire Wire Line
-	9150 3250 9500 3250
+	6650 3250 9500 3250
 Connection ~ 7750 3250
 Connection ~ 8100 3250
 Connection ~ 8450 3250
 Connection ~ 8800 3250
 Connection ~ 9150 3250
 Wire Wire Line
-	7400 3750 7750 3750
-Wire Wire Line
-	7750 3750 8100 3750
-Wire Wire Line
-	8100 3750 8450 3750
-Wire Wire Line
-	8450 3750 8800 3750
-Wire Wire Line
-	8800 3750 9150 3750
-Wire Wire Line
-	9150 3750 9500 3750
-Wire Wire Line
-	9500 3750 10000 3750
-Wire Wire Line
-	10000 3750 10350 3750
+	7400 3750 10350 3750
 Connection ~ 7750 3750
 Connection ~ 8100 3750
 Connection ~ 8450 3750
@@ -529,15 +528,7 @@ Wire Wire Line
 Wire Wire Line
 	5900 950  5300 950 
 Wire Wire Line
-	5900 600  5900 750 
-Wire Wire Line
-	5900 750  5900 950 
-Wire Wire Line
-	5900 950  5900 1150
-Wire Wire Line
-	5900 1150 5900 1350
-Wire Wire Line
-	5900 1350 5900 1550
+	5900 600  5900 1550
 Wire Wire Line
 	5900 1150 5300 1150
 Connection ~ 5900 950 
@@ -550,13 +541,7 @@ Connection ~ 5900 1350
 Wire Wire Line
 	6100 1450 5300 1450
 Wire Wire Line
-	6100 850  6100 1050
-Wire Wire Line
-	6100 1050 6100 1250
-Wire Wire Line
-	6100 1250 6100 1450
-Wire Wire Line
-	6100 1450 6100 1550
+	6100 850  6100 1550
 Wire Wire Line
 	6100 1250 5300 1250
 Wire Wire Line
@@ -572,9 +557,7 @@ Wire Wire Line
 Wire Wire Line
 	7400 2050 7400 2200
 Wire Wire Line
-	7400 2200 7850 2200
-Wire Wire Line
-	7850 2200 8300 2200
+	7400 2200 8300 2200
 Wire Wire Line
 	8300 2200 8300 2050
 Wire Wire Line
@@ -611,9 +594,7 @@ Wire Wire Line
 Wire Wire Line
 	3150 2700 3150 2600
 Wire Wire Line
-	1200 2600 3150 2600
-Wire Wire Line
-	3150 2600 3250 2600
+	1200 2600 3250 2600
 Connection ~ 3150 2600
 Wire Wire Line
 	3250 2800 3000 2800
@@ -631,40 +612,44 @@ Wire Wire Line
 	4000 2600 4200 2600
 Wire Wire Line
 	4000 2700 4200 2700
-Text Label 4200 2600 0    60   ~ 0
-485_B
-Text Label 4200 2700 0    60   ~ 0
-485_A
-Text HLabel 9500 5450 2    60   Output ~ 0
-Reg+5V
-Text Label 9350 5450 2    60   ~ 0
-Reg+5V
-$Sheet
-S 9500 4700 1050 900 
-U 551DB2D0
-F0 "Vernier Sensors Module" 60
-F1 "VernierSensors.sch" 60
-$EndSheet
 Wire Wire Line
 	9500 5450 9350 5450
-Text HLabel 9500 4900 2    60   Input ~ 0
-ANA1
-Text HLabel 9500 5050 2    60   Input ~ 0
-ANA2
 Wire Wire Line
 	9500 4900 9350 4900
 Wire Wire Line
 	9500 5050 9350 5050
-Text Label 9350 4900 2    60   ~ 0
-ADC1_IN0
-Text Label 9350 5050 2    60   ~ 0
-ADC1_IN1
 Wire Wire Line
 	1200 1800 1450 1800
 Wire Wire Line
 	1450 1900 1200 1900
-Text Label 1450 1900 0    60   ~ 0
-ADC1_IN1
-Text Label 1450 1800 0    60   ~ 0
-ADC1_IN0
+Text HLabel 7650 5450 2    60   Output ~ 0
+485_B_OUT
+Text HLabel 7650 5600 2    60   Output ~ 0
+485_A_OUT
+Wire Wire Line
+	7650 5450 7450 5450
+Wire Wire Line
+	7650 5600 7450 5600
+Text Label 7450 5450 2    60   ~ 0
+485_B
+Text Label 7450 5600 2    60   ~ 0
+485_A
+Text HLabel 7650 4800 2    60   Output ~ 0
+Reg+5V
+Text HLabel 7650 4950 2    60   Output ~ 0
+Reg+3v3
+Wire Wire Line
+	7650 4800 7450 4800
+Wire Wire Line
+	7650 4950 7450 4950
+Text Label 7450 4950 2    60   ~ 0
+Reg+3V3
+Text Label 7450 4800 2    60   ~ 0
+Reg+5V
+$Sheet
+S 7650 4600 900  1250
+U 55205598
+F0 "RS485OUT" 60
+F1 "RS485OUT.sch" 60
+$EndSheet
 $EndSCHEMATC

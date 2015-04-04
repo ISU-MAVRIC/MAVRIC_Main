@@ -1,4 +1,4 @@
-update=4/3/2015 1:30:52 PM
+update=4/4/2015 10:59:53 AM
 version=1
 last_client=kicad
 [cvpcb]
@@ -55,3 +55,4 @@ LibName3=conn
 LibName4=MAVRIClib
 LibName5=Symbols/Passives
 LibName6=Symbols/STMicroelectronics
+LibName7=Symbols/Connectors
