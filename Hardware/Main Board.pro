@@ -1,4 +1,4 @@
-update=4/4/2015 10:59:53 AM
+update=4/20/2015 6:10:48 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -56,3 +56,7 @@ LibName4=MAVRIClib
 LibName5=Symbols/Passives
 LibName6=Symbols/STMicroelectronics
 LibName7=Symbols/Connectors
+LibName8=74xx
+LibName9=atmel
+LibName10=audio
+LibName11=transistors
