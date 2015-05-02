@@ -1,4 +1,4 @@
-update=4/4/2015 10:59:53 AM
+update=4/19/2015 7:48:30 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -47,12 +47,12 @@ LibName16=valves
 version=1
 [eeschema]
 version=1
-LibDir=C:/Users/Danny/Documents/GitHub/MAVRIC_Hardware/Kicad;C:/Users/Danny/Documents/GitHub/KiCadLib
+LibDir=C:/Users/RubiCore/Documents/GitHub/KiCadLib/Symbols;C:/Users/RubiCore/Documents/GitHub/MAVRIC_Hardware/Kicad
 [eeschema/libraries]
 LibName1=power
 LibName2=device
 LibName3=conn
 LibName4=MAVRIClib
-LibName5=Symbols/Passives
-LibName6=Symbols/STMicroelectronics
-LibName7=Symbols/Connectors
+LibName5=Passives
+LibName6=STMicroelectronics
+LibName7=Connectors
