@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 update=4/19/2015 7:48:30 PM
+=======
+update=4/20/2015 6:10:48 PM
+>>>>>>> origin/master
 version=1
 last_client=kicad
 [cvpcb]
@@ -53,6 +57,16 @@ LibName1=power
 LibName2=device
 LibName3=conn
 LibName4=MAVRIClib
+<<<<<<< HEAD
 LibName5=Passives
 LibName6=STMicroelectronics
 LibName7=Connectors
+=======
+LibName5=Symbols/Passives
+LibName6=Symbols/STMicroelectronics
+LibName7=Symbols/Connectors
+LibName8=74xx
+LibName9=atmel
+LibName10=audio
+LibName11=transistors
+>>>>>>> origin/master

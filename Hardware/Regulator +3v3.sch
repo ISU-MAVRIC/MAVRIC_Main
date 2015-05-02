@@ -6,6 +6,10 @@ LIBS:MAVRIClib
 LIBS:Passives
 LIBS:STMicroelectronics
 LIBS:Connectors
+LIBS:74xx
+LIBS:atmel
+LIBS:audio
+LIBS:transistors
 LIBS:Main Board-cache
 EELAYER 25 0
 EELAYER END
@@ -33,10 +37,17 @@ F 3 "" H 3950 3400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
+<<<<<<< HEAD
 L Capacitor C14
 U 1 1 54E8D1F4
 P 5250 4650
 F 0 "C14" V 5100 4750 60  0000 L CNN
+=======
+L Capacitor C15
+U 1 1 54E8D1F4
+P 5250 4650
+F 0 "C15" V 5100 4750 60  0000 L CNN
+>>>>>>> origin/master
 F 1 "10uF" V 5200 4750 60  0000 L CNN
 F 2 "Capacitors_SMD:C_1206_HandSoldering" H 5150 4650 60  0001 C CNN
 F 3 "" H 5250 4750 60  0001 C CNN
@@ -50,10 +61,17 @@ F 9 "Y5V" V 5400 4750 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
+<<<<<<< HEAD
 L Capacitor C16
 U 1 1 54E8D274
 P 3750 3000
 F 0 "C16" V 3600 3100 60  0000 L CNN
+=======
+L Capacitor C14
+U 1 1 54E8D274
+P 3750 3000
+F 0 "C14" V 3600 3100 60  0000 L CNN
+>>>>>>> origin/master
 F 1 "10nF" V 3700 3100 60  0000 L CNN
 F 2 "Capacitors_SMD:C_1206_HandSoldering" H 3650 3000 60  0001 C CNN
 F 3 "" H 3750 3100 60  0001 C CNN
@@ -93,10 +111,17 @@ F 5 "2A" H 4250 4500 60  0000 C CNN "Average Current"
 	0    -1   -1   0   
 $EndComp
 $Comp
+<<<<<<< HEAD
 L GND #PWR012
 U 1 1 54E8D112
 P 3200 3500
 F 0 "#PWR012" H 3200 3500 30  0001 C CNN
+=======
+L GND #PWR010
+U 1 1 54E8D112
+P 3200 3500
+F 0 "#PWR010" H 3200 3500 30  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 3200 3430 30  0001 C CNN
 F 2 "" H 3200 3500 60  0000 C CNN
 F 3 "" H 3200 3500 60  0000 C CNN
@@ -106,10 +131,17 @@ $EndComp
 Text HLabel 5550 3400 2    60   Output ~ 0
 Reg+3v3
 $Comp
+<<<<<<< HEAD
 L GND #PWR013
 U 1 1 54E8E890
 P 4250 5200
 F 0 "#PWR013" H 4250 5200 30  0001 C CNN
+=======
+L GND #PWR011
+U 1 1 54E8E890
+P 4250 5200
+F 0 "#PWR011" H 4250 5200 30  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 4250 5130 30  0001 C CNN
 F 2 "" H 4250 5200 60  0000 C CNN
 F 3 "" H 4250 5200 60  0000 C CNN
@@ -151,6 +183,7 @@ F 9 "5%" V 3850 5150 50  0000 L CNN "Tolerance"
 	1    0    0    -1  
 $EndComp
 $Comp
+<<<<<<< HEAD
 L +12V #PWR014
 U 1 1 54E8F299
 P 4950 3500
@@ -159,6 +192,16 @@ F 1 "+12V" H 4950 3600 30  0000 C CNN
 F 2 "" H 4950 3500 60  0000 C CNN
 F 3 "" H 4950 3500 60  0000 C CNN
 	1    4950 3500
+=======
+L +12V #PWR012
+U 1 1 54E8F299
+P 4350 3500
+F 0 "#PWR012" H 4350 3450 20  0001 C CNN
+F 1 "+12V" H 4350 3600 30  0000 C CNN
+F 2 "" H 4350 3500 60  0000 C CNN
+F 3 "" H 4350 3500 60  0000 C CNN
+	1    4350 3500
+>>>>>>> origin/master
 	0    1    1    0   
 $EndComp
 $Comp
@@ -173,10 +216,17 @@ F 3 "" H 7800 3400 60  0000 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
+<<<<<<< HEAD
 L Capacitor C15
 U 1 1 54FB4029
 P 9100 4650
 F 0 "C15" V 8950 4750 60  0000 L CNN
+=======
+L Capacitor C17
+U 1 1 54FB4029
+P 9100 4650
+F 0 "C17" V 8950 4750 60  0000 L CNN
+>>>>>>> origin/master
 F 1 "10uF" V 9050 4750 60  0000 L CNN
 F 2 "Capacitors_SMD:C_1206_HandSoldering" H 9000 4650 60  0001 C CNN
 F 3 "" H 9100 4750 60  0001 C CNN
@@ -190,10 +240,17 @@ F 9 "Y5V" V 9250 4750 50  0000 L CNN "Dielectric"
 	0    -1   -1   0   
 $EndComp
 $Comp
+<<<<<<< HEAD
 L Capacitor C17
 U 1 1 54FB4035
 P 7600 3000
 F 0 "C17" V 7450 3100 60  0000 L CNN
+=======
+L Capacitor C16
+U 1 1 54FB4035
+P 7600 3000
+F 0 "C16" V 7450 3100 60  0000 L CNN
+>>>>>>> origin/master
 F 1 "10nF" V 7550 3100 60  0000 L CNN
 F 2 "Capacitors_SMD:C_1206_HandSoldering" H 7500 3000 60  0001 C CNN
 F 3 "" H 7600 3100 60  0001 C CNN
@@ -233,10 +290,17 @@ F 5 "2A" H 8100 4500 60  0000 C CNN "Average Current"
 	0    -1   -1   0   
 $EndComp
 $Comp
+<<<<<<< HEAD
 L GND #PWR015
 U 1 1 54FB404B
 P 7050 3500
 F 0 "#PWR015" H 7050 3500 30  0001 C CNN
+=======
+L GND #PWR013
+U 1 1 54FB404B
+P 7050 3500
+F 0 "#PWR013" H 7050 3500 30  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 7050 3430 30  0001 C CNN
 F 2 "" H 7050 3500 60  0000 C CNN
 F 3 "" H 7050 3500 60  0000 C CNN
@@ -244,10 +308,17 @@ F 3 "" H 7050 3500 60  0000 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
+<<<<<<< HEAD
 L GND #PWR016
 U 1 1 54FB4052
 P 8100 5200
 F 0 "#PWR016" H 8100 5200 30  0001 C CNN
+=======
+L GND #PWR014
+U 1 1 54FB4052
+P 8100 5200
+F 0 "#PWR014" H 8100 5200 30  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 8100 5130 30  0001 C CNN
 F 2 "" H 8100 5200 60  0000 C CNN
 F 3 "" H 8100 5200 60  0000 C CNN
@@ -289,10 +360,17 @@ F 9 "5%" V 7700 5150 50  0000 L CNN "Tolerance"
 	1    0    0    -1  
 $EndComp
 $Comp
+<<<<<<< HEAD
 L +12V #PWR017
 U 1 1 54FB4070
 P 8200 3500
 F 0 "#PWR017" H 8200 3450 20  0001 C CNN
+=======
+L +12V #PWR015
+U 1 1 54FB4070
+P 8200 3500
+F 0 "#PWR015" H 8200 3450 20  0001 C CNN
+>>>>>>> origin/master
 F 1 "+12V" H 8200 3600 30  0000 C CNN
 F 2 "" H 8200 3500 60  0000 C CNN
 F 3 "" H 8200 3500 60  0000 C CNN

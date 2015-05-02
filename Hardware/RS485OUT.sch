@@ -6,6 +6,10 @@ LIBS:MAVRIClib
 LIBS:Passives
 LIBS:STMicroelectronics
 LIBS:Connectors
+LIBS:74xx
+LIBS:atmel
+LIBS:audio
+LIBS:transistors
 LIBS:Main Board-cache
 EELAYER 25 0
 EELAYER END
@@ -39,10 +43,17 @@ Reg+5V
 Text Label 3650 1500 2    60   ~ 0
 Reg+3V3
 $Comp
+<<<<<<< HEAD
 L GND #PWR023
 U 1 1 55205BC5
 P 4300 1700
 F 0 "#PWR023" H 4300 1450 60  0001 C CNN
+=======
+L GND #PWR021
+U 1 1 55205BC5
+P 4300 1700
+F 0 "#PWR021" H 4300 1450 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 4300 1550 60  0000 C CNN
 F 2 "" H 4300 1700 60  0000 C CNN
 F 3 "" H 4300 1700 60  0000 C CNN
@@ -54,8 +65,13 @@ L Resistor R9
 U 1 1 55205BD1
 P 2950 1250
 F 0 "R9" V 2800 1350 60  0000 L CNN
+<<<<<<< HEAD
 F 1 "100" V 2900 1350 60  0000 L CNN
 F 2 "Resistors_SMD:R_1206_HandSoldering" H 2850 1250 60  0001 C CNN
+=======
+F 1 "Resistor" V 2900 1350 60  0000 L CNN
+F 2 "" H 2850 1250 60  0001 C CNN
+>>>>>>> origin/master
 F 3 "" H 2950 1350 60  0001 C CNN
 F 4 "Value" H 2950 1250 60  0001 C CNN "Manufacturer"
 F 5 "Value" H 2950 1250 60  0001 C CNN "Manufacturer Part #"
@@ -88,10 +104,17 @@ Reg+5V
 Text Label 4150 2750 2    60   ~ 0
 Reg+3V3
 $Comp
+<<<<<<< HEAD
 L GND #PWR024
 U 1 1 55205C7B
 P 4300 2950
 F 0 "#PWR024" H 4300 2700 60  0001 C CNN
+=======
+L GND #PWR022
+U 1 1 55205C7B
+P 4300 2950
+F 0 "#PWR022" H 4300 2700 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 4300 2800 60  0000 C CNN
 F 2 "" H 4300 2950 60  0000 C CNN
 F 3 "" H 4300 2950 60  0000 C CNN
@@ -103,8 +126,13 @@ L Resistor R10
 U 1 1 55205C87
 P 3550 2500
 F 0 "R10" V 3400 2600 60  0000 L CNN
+<<<<<<< HEAD
 F 1 "100" V 3500 2600 60  0000 L CNN
 F 2 "Resistors_SMD:R_1206_HandSoldering" H 3450 2500 60  0001 C CNN
+=======
+F 1 "Resistor" V 3500 2600 60  0000 L CNN
+F 2 "" H 3450 2500 60  0001 C CNN
+>>>>>>> origin/master
 F 3 "" H 3550 2600 60  0001 C CNN
 F 4 "Value" H 3550 2500 60  0001 C CNN "Manufacturer"
 F 5 "Value" H 3550 2500 60  0001 C CNN "Manufacturer Part #"
@@ -137,10 +165,17 @@ Reg+5V
 Text Label 4150 3950 2    60   ~ 0
 Reg+3V3
 $Comp
+<<<<<<< HEAD
 L GND #PWR025
 U 1 1 55205D01
 P 4300 4150
 F 0 "#PWR025" H 4300 3900 60  0001 C CNN
+=======
+L GND #PWR023
+U 1 1 55205D01
+P 4300 4150
+F 0 "#PWR023" H 4300 3900 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 4300 4000 60  0000 C CNN
 F 2 "" H 4300 4150 60  0000 C CNN
 F 3 "" H 4300 4150 60  0000 C CNN
@@ -152,8 +187,13 @@ L Resistor R11
 U 1 1 55205D0D
 P 3550 3700
 F 0 "R11" V 3400 3800 60  0000 L CNN
+<<<<<<< HEAD
 F 1 "100" V 3500 3800 60  0000 L CNN
 F 2 "Resistors_SMD:R_1206_HandSoldering" H 3450 3700 60  0001 C CNN
+=======
+F 1 "Resistor" V 3500 3800 60  0000 L CNN
+F 2 "" H 3450 3700 60  0001 C CNN
+>>>>>>> origin/master
 F 3 "" H 3550 3800 60  0001 C CNN
 F 4 "Value" H 3550 3700 60  0001 C CNN "Manufacturer"
 F 5 "Value" H 3550 3700 60  0001 C CNN "Manufacturer Part #"
@@ -186,10 +226,17 @@ Reg+5V
 Text Label 8450 1400 2    60   ~ 0
 Reg+3V3
 $Comp
+<<<<<<< HEAD
 L GND #PWR026
 U 1 1 55205D81
 P 8600 1600
 F 0 "#PWR026" H 8600 1350 60  0001 C CNN
+=======
+L GND #PWR024
+U 1 1 55205D81
+P 8600 1600
+F 0 "#PWR024" H 8600 1350 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 8600 1450 60  0000 C CNN
 F 2 "" H 8600 1600 60  0000 C CNN
 F 3 "" H 8600 1600 60  0000 C CNN
@@ -201,8 +248,13 @@ L Resistor R13
 U 1 1 55205D8D
 P 7850 1150
 F 0 "R13" V 7700 1250 60  0000 L CNN
+<<<<<<< HEAD
 F 1 "100" V 7800 1250 60  0000 L CNN
 F 2 "Resistors_SMD:R_1206_HandSoldering" H 7750 1150 60  0001 C CNN
+=======
+F 1 "Resistor" V 7800 1250 60  0000 L CNN
+F 2 "" H 7750 1150 60  0001 C CNN
+>>>>>>> origin/master
 F 3 "" H 7850 1250 60  0001 C CNN
 F 4 "Value" H 7850 1150 60  0001 C CNN "Manufacturer"
 F 5 "Value" H 7850 1150 60  0001 C CNN "Manufacturer Part #"
@@ -235,10 +287,17 @@ Reg+5V
 Text Label 8500 2600 2    60   ~ 0
 Reg+3V3
 $Comp
+<<<<<<< HEAD
 L GND #PWR027
 U 1 1 55205E0F
 P 8650 2800
 F 0 "#PWR027" H 8650 2550 60  0001 C CNN
+=======
+L GND #PWR025
+U 1 1 55205E0F
+P 8650 2800
+F 0 "#PWR025" H 8650 2550 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 8650 2650 60  0000 C CNN
 F 2 "" H 8650 2800 60  0000 C CNN
 F 3 "" H 8650 2800 60  0000 C CNN
@@ -250,8 +309,13 @@ L Resistor R15
 U 1 1 55205E1B
 P 7900 2350
 F 0 "R15" V 7750 2450 60  0000 L CNN
+<<<<<<< HEAD
 F 1 "100" V 7850 2450 60  0000 L CNN
 F 2 "Resistors_SMD:R_1206_HandSoldering" H 7800 2350 60  0001 C CNN
+=======
+F 1 "Resistor" V 7850 2450 60  0000 L CNN
+F 2 "" H 7800 2350 60  0001 C CNN
+>>>>>>> origin/master
 F 3 "" H 7900 2450 60  0001 C CNN
 F 4 "Value" H 7900 2350 60  0001 C CNN "Manufacturer"
 F 5 "Value" H 7900 2350 60  0001 C CNN "Manufacturer Part #"
@@ -284,10 +348,17 @@ Reg+5V
 Text Label 8450 3900 2    60   ~ 0
 Reg+3V3
 $Comp
+<<<<<<< HEAD
 L GND #PWR028
 U 1 1 55206055
 P 8600 4100
 F 0 "#PWR028" H 8600 3850 60  0001 C CNN
+=======
+L GND #PWR026
+U 1 1 55206055
+P 8600 4100
+F 0 "#PWR026" H 8600 3850 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 8600 3950 60  0000 C CNN
 F 2 "" H 8600 4100 60  0000 C CNN
 F 3 "" H 8600 4100 60  0000 C CNN
@@ -299,8 +370,13 @@ L Resistor R14
 U 1 1 55206061
 P 7850 3650
 F 0 "R14" V 7700 3750 60  0000 L CNN
+<<<<<<< HEAD
 F 1 "100" V 7800 3750 60  0000 L CNN
 F 2 "Resistors_SMD:R_1206_HandSoldering" H 7750 3650 60  0001 C CNN
+=======
+F 1 "Resistor" V 7800 3750 60  0000 L CNN
+F 2 "" H 7750 3650 60  0001 C CNN
+>>>>>>> origin/master
 F 3 "" H 7850 3750 60  0001 C CNN
 F 4 "Value" H 7850 3650 60  0001 C CNN "Manufacturer"
 F 5 "Value" H 7850 3650 60  0001 C CNN "Manufacturer Part #"
@@ -329,10 +405,17 @@ $EndComp
 NoConn ~ 4700 5900
 NoConn ~ 4700 6000
 $Comp
+<<<<<<< HEAD
 L GND #PWR029
 U 1 1 5520612B
 P 4500 6700
 F 0 "#PWR029" H 4500 6450 60  0001 C CNN
+=======
+L GND #PWR027
+U 1 1 5520612B
+P 4500 6700
+F 0 "#PWR027" H 4500 6450 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 4500 6550 60  0000 C CNN
 F 2 "" H 4500 6700 60  0000 C CNN
 F 3 "" H 4500 6700 60  0000 C CNN
@@ -344,8 +427,13 @@ L Resistor R12
 U 1 1 55206137
 P 3750 6250
 F 0 "R12" V 3600 6350 60  0000 L CNN
+<<<<<<< HEAD
 F 1 "100" V 3700 6350 60  0000 L CNN
 F 2 "Resistors_SMD:R_1206_HandSoldering" H 3650 6250 60  0001 C CNN
+=======
+F 1 "Resistor" V 3700 6350 60  0000 L CNN
+F 2 "" H 3650 6250 60  0001 C CNN
+>>>>>>> origin/master
 F 3 "" H 3750 6350 60  0001 C CNN
 F 4 "Value" H 3750 6250 60  0001 C CNN "Manufacturer"
 F 5 "Value" H 3750 6250 60  0001 C CNN "Manufacturer Part #"

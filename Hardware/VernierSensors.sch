@@ -6,6 +6,10 @@ LIBS:MAVRIClib
 LIBS:Passives
 LIBS:STMicroelectronics
 LIBS:Connectors
+LIBS:74xx
+LIBS:atmel
+LIBS:audio
+LIBS:transistors
 LIBS:Main Board-cache
 EELAYER 25 0
 EELAYER END
@@ -63,10 +67,17 @@ Wire Wire Line
 	2900 3300 2750 3300
 Connection ~ 2900 3300
 $Comp
+<<<<<<< HEAD
 L GND #PWR018
 U 1 1 551E15A1
 P 2900 4100
 F 0 "#PWR018" H 2900 3850 60  0001 C CNN
+=======
+L GND #PWR016
+U 1 1 551E15A1
+P 2900 4100
+F 0 "#PWR016" H 2900 3850 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 2900 3950 60  0000 C CNN
 F 2 "" H 2900 4100 60  0000 C CNN
 F 3 "" H 2900 4100 60  0000 C CNN
@@ -81,6 +92,7 @@ Text HLabel 5950 3700 2    60   Output ~ 0
 ANA2
 Wire Wire Line
 	2750 3700 4450 3700
+<<<<<<< HEAD
 $Comp
 L LM741 OP1
 U 1 1 5536B2A8
@@ -94,6 +106,8 @@ F 5 "296-15051-1-ND" H 4950 1650 60  0001 C CNN "Manufacturer SKU"
 	1    4950 1650
 	1    0    0    1   
 $EndComp
+=======
+>>>>>>> origin/master
 Wire Wire Line
 	3950 2500 3950 1600
 Wire Wire Line
@@ -146,10 +160,17 @@ Wire Wire Line
 Wire Wire Line
 	5450 1600 5950 1600
 $Comp
+<<<<<<< HEAD
 L GND #PWR019
 U 1 1 5536C048
 P 4300 2850
 F 0 "#PWR019" H 4300 2600 60  0001 C CNN
+=======
+L GND #PWR017
+U 1 1 5536C048
+P 4300 2850
+F 0 "#PWR017" H 4300 2600 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 4300 2700 60  0000 C CNN
 F 2 "" H 4300 2850 60  0000 C CNN
 F 3 "" H 4300 2850 60  0000 C CNN
@@ -159,6 +180,22 @@ $EndComp
 Wire Wire Line
 	4300 2850 4300 2750
 Connection ~ 5700 1600
+<<<<<<< HEAD
+=======
+$Comp
+L LM741 OP2
+U 1 1 5536C358
+P 4950 3750
+F 0 "OP2" H 5250 3450 60  0000 C CNN
+F 1 "LM741" H 4950 4050 60  0000 C CNN
+F 2 "" H 4850 3700 60  0000 C CNN
+F 3 "" H 4850 3700 60  0000 C CNN
+F 4 "Digi-Key" H 4950 3750 60  0001 C CNN "Vendor"
+F 5 "296-15051-1-ND" H 4950 3750 60  0001 C CNN "Vendor SKU"
+	1    4950 3750
+	1    0    0    1   
+$EndComp
+>>>>>>> origin/master
 Wire Wire Line
 	4450 3800 4300 3800
 Wire Wire Line
@@ -207,10 +244,17 @@ Wire Wire Line
 Wire Wire Line
 	5450 3700 5950 3700
 $Comp
+<<<<<<< HEAD
 L GND #PWR020
 U 1 1 5536C381
 P 4300 4950
 F 0 "#PWR020" H 4300 4700 60  0001 C CNN
+=======
+L GND #PWR018
+U 1 1 5536C381
+P 4300 4950
+F 0 "#PWR018" H 4300 4700 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 4300 4800 60  0000 C CNN
 F 2 "" H 4300 4950 60  0000 C CNN
 F 3 "" H 4300 4950 60  0000 C CNN
@@ -221,10 +265,17 @@ Wire Wire Line
 	4300 4950 4300 4900
 Connection ~ 5700 3700
 $Comp
+<<<<<<< HEAD
 L GND #PWR021
 U 1 1 5536CDD6
 P 4200 3600
 F 0 "#PWR021" H 4200 3350 60  0001 C CNN
+=======
+L GND #PWR019
+U 1 1 5536CDD6
+P 4200 3600
+F 0 "#PWR019" H 4200 3350 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 4200 3450 60  0000 C CNN
 F 2 "" H 4200 3600 60  0000 C CNN
 F 3 "" H 4200 3600 60  0000 C CNN
@@ -236,10 +287,17 @@ Wire Wire Line
 Wire Wire Line
 	4450 1500 4200 1500
 $Comp
+<<<<<<< HEAD
 L GND #PWR022
 U 1 1 5536CE79
 P 4200 1500
 F 0 "#PWR022" H 4200 1250 60  0001 C CNN
+=======
+L GND #PWR020
+U 1 1 5536CE79
+P 4200 1500
+F 0 "#PWR020" H 4200 1250 60  0001 C CNN
+>>>>>>> origin/master
 F 1 "GND" H 4200 1350 60  0000 C CNN
 F 2 "" H 4200 1500 60  0000 C CNN
 F 3 "" H 4200 1500 60  0000 C CNN
@@ -249,7 +307,13 @@ $EndComp
 Wire Wire Line
 	5550 3800 5450 3800
 Wire Wire Line
+<<<<<<< HEAD
 	5550 1700 5550 3800
+=======
+	5550 1700 5550 3250
+Wire Wire Line
+	5550 3250 5550 3800
+>>>>>>> origin/master
 Wire Wire Line
 	5550 1700 5450 1700
 Wire Wire Line
@@ -269,6 +333,7 @@ NoConn ~ 2750 3200
 NoConn ~ 2750 3400
 NoConn ~ 2750 3500
 $Comp
+<<<<<<< HEAD
 L LM741 OP2
 U 1 1 553F213B
 P 4950 3750
@@ -279,6 +344,18 @@ F 3 "" H 4850 3700 60  0000 C CNN
 F 4 "DigiKey" H 4950 3750 60  0001 C CNN "Manufacturer"
 F 5 "296-15051-1-ND" H 4950 3750 60  0001 C CNN "Manufacturer SKU"
 	1    4950 3750
+=======
+L LM741 OP?
+U 1 1 5535FF61
+P 4950 1650
+F 0 "OP?" H 5250 1350 60  0000 C CNN
+F 1 "LM741" H 4950 1950 60  0000 C CNN
+F 2 "" H 4850 1600 60  0000 C CNN
+F 3 "" H 4850 1600 60  0000 C CNN
+F 4 "Digi-Key" H 4950 1650 60  0001 C CNN "Vendor"
+F 5 "296-15051-1-ND" H 4950 1650 60  0001 C CNN "Vendor SKU"
+	1    4950 1650
+>>>>>>> origin/master
 	1    0    0    1   
 $EndComp
 $EndSCHEMATC
