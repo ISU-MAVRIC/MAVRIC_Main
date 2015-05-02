@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-update=4/19/2015 7:48:30 PM
-=======
-update=4/20/2015 6:10:48 PM
->>>>>>> origin/master
+update=5/2/2015 4:07:09 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -47,26 +43,26 @@ LibName13=led
 LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
-[general]
-version=1
 [eeschema]
 version=1
-LibDir=C:/Users/RubiCore/Documents/GitHub/KiCadLib/Symbols;C:/Users/RubiCore/Documents/GitHub/MAVRIC_Hardware/Kicad
+LibDir=C:/Users/Danny/Documents/GitHub/KiCadLib/Symbols;C:/Users/Danny/Documents/GitHub/KiCadLib/Modules;C:/Users/Danny/Documents/GitHub/MAVRIC_Hardware/Kicad/footprints.pretty;C:/Users/Danny/Documents/GitHub/MAVRIC_Hardware/Kicad
 [eeschema/libraries]
 LibName1=power
 LibName2=device
 LibName3=conn
 LibName4=MAVRIClib
-<<<<<<< HEAD
-LibName5=Passives
-LibName6=STMicroelectronics
-LibName7=Connectors
-=======
-LibName5=Symbols/Passives
-LibName6=Symbols/STMicroelectronics
-LibName7=Symbols/Connectors
-LibName8=74xx
-LibName9=atmel
-LibName10=audio
-LibName11=transistors
->>>>>>> origin/master
+LibName5=74xx
+LibName6=atmel
+LibName7=audio
+LibName8=transistors
+LibName9=C:/Users/RubiCore/Documents/GitHub/KiCadLib/Symbols/Passives
+LibName10=C:/Users/RubiCore/Documents/GitHub/KiCadLib/Symbols/STMicroelectronics
+LibName11=C:/Users/RubiCore/Documents/GitHub/KiCadLib/Symbols/Connectors
+LibName12=C:/Users/RubiCore/Documents/GitHub/KiCadLib/Symbols/Sensors
+LibName13=C:/Users/RubiCore/Documents/GitHub/MAVRIC_Hardware/Kicad/MAVRIClib
+LibName14=C:/Users/Danny/Documents/GitHub/KiCadLib/Symbols/Connectors
+LibName15=C:/Users/Danny/Documents/GitHub/KiCadLib/Symbols/Passives
+LibName16=C:/Users/Danny/Documents/GitHub/KiCadLib/Symbols/STMicroelectronics
+LibName17=C:/Users/Danny/Documents/GitHub/MAVRIC_Hardware/Kicad/MAVRIClib
+[general]
+version=1
