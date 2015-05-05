@@ -1,4 +1,4 @@
-Cmp-Mod V01 Created by Cvpcb (2015-01-16 BZR 5376)-product   date = 5/2/2015 4:02:42 PM
+Cmp-Mod V01 Created by Cvpcb (2015-01-16 BZR 5376)-product   date = 5/4/2015 8:08:46 PM
 
 BeginCmp
 TimeStamp = /55459437;
@@ -214,7 +214,7 @@ BeginCmp
 TimeStamp = /55446DF0;
 Reference = GPS1;
 ValeurCmp = GPS;
-IdModule  = MAVRIC:GPS;
+IdModule  = MAVRIc:GPS_Pads;
 EndCmp
 
 BeginCmp
