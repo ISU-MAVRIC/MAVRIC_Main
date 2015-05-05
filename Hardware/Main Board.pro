@@ -1,4 +1,4 @@
-update=5/2/2015 4:07:09 PM
+update=5/4/2015 6:57:53 PM
 version=1
 last_client=kicad
 [cvpcb]
@@ -43,9 +43,11 @@ LibName13=led
 LibName14=dip_sockets
 LibName15=pga_sockets
 LibName16=valves
+[general]
+version=1
 [eeschema]
 version=1
-LibDir=C:/Users/Danny/Documents/GitHub/KiCadLib/Symbols;C:/Users/Danny/Documents/GitHub/KiCadLib/Modules;C:/Users/Danny/Documents/GitHub/MAVRIC_Hardware/Kicad/footprints.pretty;C:/Users/Danny/Documents/GitHub/MAVRIC_Hardware/Kicad
+LibDir=../../../../Documents/GitHub/KiCadLib/Symbols;../../../../Documents/GitHub/MAVRIC_Hardware/Kicad/footprints.pretty;../../../../Documents/GitHub/MAVRIC_Hardware/Kicad
 [eeschema/libraries]
 LibName1=power
 LibName2=device
@@ -64,5 +66,3 @@ LibName14=C:/Users/Danny/Documents/GitHub/KiCadLib/Symbols/Connectors
 LibName15=C:/Users/Danny/Documents/GitHub/KiCadLib/Symbols/Passives
 LibName16=C:/Users/Danny/Documents/GitHub/KiCadLib/Symbols/STMicroelectronics
 LibName17=C:/Users/Danny/Documents/GitHub/MAVRIC_Hardware/Kicad/MAVRIClib
-[general]
-version=1
